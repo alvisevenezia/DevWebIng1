@@ -237,7 +237,7 @@
 											"font": "Arial;13;1",
 											"left": 205,
 											"top": 151,
-											"width": 80.57080078125,
+											"width": 138.3916015625,
 											"height": 13,
 											"text": "Client"
 										},
@@ -272,7 +272,7 @@
 									"font": "Arial;13;0",
 									"left": 200,
 									"top": 144,
-									"width": 90.57080078125,
+									"width": 148.3916015625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGHQ0SIHx0Vv9Q="
@@ -309,7 +309,7 @@
 											"font": "Arial;13;0",
 											"left": 205,
 											"top": 174,
-											"width": 80.57080078125,
+											"width": 138.3916015625,
 											"height": 13,
 											"text": "+idClient: int",
 											"horizontalAlignment": 0
@@ -326,17 +326,34 @@
 											"font": "Arial;13;0",
 											"left": 205,
 											"top": 189,
-											"width": 80.57080078125,
+											"width": 138.3916015625,
 											"height": 13,
 											"text": "+idPanier: int",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGHUnGcf60Ty9U=",
+											"_parent": {
+												"$ref": "AAAAAAGHQ0SIHx0Ze1M="
+											},
+											"model": {
+												"$ref": "AAAAAAGHUnGcbq0Qwok="
+											},
+											"font": "Arial;13;0",
+											"left": 205,
+											"top": 204,
+											"width": 138.3916015625,
+											"height": 13,
+											"text": "+idSession: int",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 200,
 									"top": 169,
-									"width": 90.57080078125,
-									"height": 38
+									"width": 148.3916015625,
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -359,17 +376,18 @@
 											},
 											"font": "Arial;13;0",
 											"left": 205,
-											"top": 212,
-											"width": 80.57080078125,
+											"top": 227,
+											"width": 138.3916015625,
 											"height": 13,
-											"text": "+Operation1()",
-											"horizontalAlignment": 0
+											"text": "+ajouterPanier()",
+											"horizontalAlignment": 0,
+											"wordWrap": true
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 200,
-									"top": 207,
-									"width": 90.57080078125,
+									"top": 222,
+									"width": 148.3916015625,
 									"height": 23
 								},
 								{
@@ -409,8 +427,8 @@
 							"containerChangeable": true,
 							"left": 200,
 							"top": 144,
-							"width": 90.57080078125,
-							"height": 86,
+							"width": 148.3916015625,
+							"height": 101,
 							"nameCompartment": {
 								"$ref": "AAAAAAGHQ0SIHx0Ueu8="
 							},
@@ -846,6 +864,15 @@
 							},
 							"name": "idPanier",
 							"type": "int"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGHUnGcbq0Qwok=",
+							"_parent": {
+								"$ref": "AAAAAAGHQ0SIHh0RJKs="
+							},
+							"name": "idSession",
+							"type": "int"
 						}
 					],
 					"operations": [
@@ -855,7 +882,10 @@
 							"_parent": {
 								"$ref": "AAAAAAGHQ0SIHh0RJKs="
 							},
-							"name": "Operation1"
+							"name": "ajouterPanier",
+							"documentation": "ajouter une produit au panier du client",
+							"stereotype": "",
+							"specification": "ajouter une produit au panier du client"
 						}
 					]
 				},
