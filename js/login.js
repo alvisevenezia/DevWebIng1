@@ -2,6 +2,7 @@ function oullourt(){
     alert("HELO");
 } 
 
-function balbal(){
-    return "zizi"
+function balbal(x,y){
+
+    return x+y
 }
