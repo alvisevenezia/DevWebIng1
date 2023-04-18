@@ -22,10 +22,12 @@ CREATE TABLE `projetweb`.`client` (
   UNIQUE INDEX `idPersonne_UNIQUE` (`idPersonne` ASC) VISIBLE);
   
   CREATE TABLE `projetweb`.`vendeur` (
-  `idvendeur` INT NOT NULL,
+  `idVendeur` INT NOT NULL,
   `dateInscription` DATE NOT NULL,
   `idPersonne` INT NOT NULL,
-  PRIMARY KEY (`idvendeur`),
+  `chiffreAffaire` INT NOT NULL,
+  `comission` INT NOT NULL, 
+  PRIMARY KEY (`idVendeur`),
   UNIQUE INDEX `idPersonne_UNIQUE` (`idPersonne` ASC) VISIBLE);
   
   CREATE TABLE `projetweb`.`produit` (
@@ -35,6 +37,9 @@ CREATE TABLE `projetweb`.`client` (
   `prix` INT NOT NULL,
   `poid` INT NOT NULL,
   `idVendeur` INT NOT NULL,
+  `marque` VARCHAR(45) NOT NULL,
+  `type` INT NOT NULL,
+  `taille` INT NOT NULL,
   UNIQUE INDEX `idproduit_UNIQUE` (`idproduit` ASC) VISIBLE,
   PRIMARY KEY (`idproduit`));
 
