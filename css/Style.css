@@ -4,7 +4,9 @@
   text-decoration: none;
   list-style: none;
   font-family: sans-serif;
+  color: black;
 }
+
 
 .navbar{
   padding: 10px 0 30px 0;
@@ -52,11 +54,56 @@
   display: block;
 }
 
+.menu{
+  width: 100%;
+  height: 20%;
+  background-color: #fff;
+}
+
+.menu a{
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+}
+
 .menu ul li{
   float: none;
   display:inline-block;
-  padding: 20px;
-  font-size: 1.5em;
+  padding: 15px 20px ;
+  font-size: 2rem; 
+}
+
+.menu > ul > li{
+  float: left;
+  position: relative;
+  
+}
+
+.menu >ul::after{
+  content: "";
+  display:table;
+  clear: both;
+}
+
+.menu li:hover .submenu{
+  display: inline-block;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  z-index: 10000;
+}
+.submenu{
+  display: none;
+
+}
+.submenu li {
+  width: 100%;
+  background-color: #fff;
+}
+.submenu  li a{
+  padding: 15px 30px;
+  font-size: 25px;
+  color: black;
 }
 
 hr{
@@ -155,4 +202,305 @@ hr{
   100%{
     transform: translateX(0);
   }
+}
+
+.New_in{
+  font-size: 2rem; 
+  padding: 30px 10px 0px 20px;
+}
+
+.New_in img{
+  width: 60px;
+  height: 60px;
+  padding-left:1% ;
+}
+
+.wrapper 
+{
+    width: 450px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    padding: 30px 16px;
+}
+
+.wrapper img{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+}
+
+.wrapper .content{
+    position: absolute;
+    top: 45%;
+    left: 38%;
+    overflow: hidden;
+    color: #fff;
+    font-size: 60px;
+}
+.wrapper .content a{
+    font-size: 24px;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.overlay{
+    opacity: 0;
+}
+
+.wrapper:hover img{
+    opacity: .5;
+}
+
+.wrapper:hover .overlay{
+    opacity: 1;
+}
+
+
+.wrapper2 
+{
+    width: 600px;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    padding: 30px 60px 10px 60px;
+}
+
+.wrapper2 img{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+}
+
+.wrapper2 .content{
+    position: absolute;
+    top: 45%;
+    left: 38%;
+    overflow: hidden;
+    color: #fff;
+    font-size: 60px;
+}
+.wrapper2 .content a{
+    font-size: 24px;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.overlay{
+    opacity: 0;
+}
+
+.wrapper2:hover img{
+    opacity: .5;
+}
+
+.wrapper2:hover .overlay{
+    opacity: 1;
+}
+
+
+
+.titre_compte{
+  text-align: center;
+  font-size: 10rem;
+  color: black;
+  -webkit-animation: 1s couleur infinite alternate;
+}
+
+@-webkit-keyframes couleur{
+  0%{color:red;}
+  25%{color:blue;}
+  50%{color:green;}
+  75%{color:yellow;}
+  100%{color:purple;}
+
+}
+
+
+.compte{
+  margin: auto;
+  height: 800px;
+  width: 1200px;
+  padding: 10px;
+}
+
+.connexion{
+  width: 570px;
+  font-size: 1.5rem;
+  padding:10px ;
+  text-align:center;
+  height: 30px;
+  float: left;
+  border: 4px solid;
+}
+
+.inscription{
+  width: 570px;
+  font-size: 1.5rem;
+  padding:10px ;
+  text-align:center;
+  height: 30px;
+  float: right;
+  border: 4px solid;
+}
+
+
+.inscription_button{
+  width: 570px;
+  font-size: 1.5rem;
+  padding:12px ;
+  text-align:center;
+  height: 57px;
+  float: right;
+  border: 2px solid;
+  background-color: #fff;
+}
+
+.inscription_button:hover {
+  border: 3px solid;
+}
+
+.connexion_button{
+  width: 570px;
+  font-size: 1.5rem;
+  padding:12px ;
+  text-align:center;
+  height: 57px;
+  float:left;
+  border: 2px solid;
+  background-color: #fff;
+}
+
+.connexion_button:hover {
+  border: 3px solid;
+}
+
+.email{
+  margin-top: 20px;
+  border: 2px solid;
+  float:left;
+  height: 3px;
+  width: 1157px;
+  padding: 20px;
+}
+
+.valider{
+  margin-top: 20px;
+  background-color: #fff;
+  border: 2px solid;
+  float:left;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 30px;
+  width: 1200px;
+  padding: 10px 20px 30px 30px;
+}
+
+.valider:hover {
+  background-color:gray;
+  color: #fff;
+}
+
+
+.valider2{
+  margin-top: 20px;
+  background-color: #fff;
+  border: 3px solid;
+  border-color: rgb(167, 74, 255);
+  float:left;
+  color: rgb(167, 74, 255);
+  font-size: 1.2rem;
+  text-align: center;
+  height: 30px;
+  width: 1200px;
+  padding: 10px 20px 30px 30px;
+}
+
+.valider2:hover {
+  background-color:rgb(167, 74, 255);
+  color: #fff;
+}
+
+
+#checkbox{
+  height: 20px;
+  width: 20px;
+}
+.checkbox{
+  display: block;
+  float: left;
+  width: 100px;
+}
+.checkbox2{
+  margin: auto; 
+}
+
+.label{
+  height: 20px;
+  width: 1200px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.checkbox3{
+  display: flex;
+  float: left;
+  font-size: 10px;
+  padding-top: 20px;
+}
+
+.checkbox label{
+  padding-left: 10px;
+}
+.identité{
+  padding: 20px 0px;
+  padding-bottom: 20px;
+}
+.prenom{
+  margin-top: 20px;
+  border: 2px solid;
+  float:left;
+  height: 3px;
+  width:565px;
+  padding: 20px;
+}
+
+.nom{
+  margin-top: 20px;
+  border: 2px solid;
+  float:right;
+  height: 3px;
+  width:540px;
+  padding: 20px;
+}
+
+.custom-select{
+  display: flex;
+  padding-top: 20px;
+  float: right;
+}
+
+.custom-select select{
+  position: relative;
+  display: flex;
+  width: 43.7em;
+  height: 46px;
+  border: 2px solid;
+}
+
+.inscription_vendeur{
+  display: block;
+  float: left;
+  padding-top: 15px;
+  font-size: 12px;
+  border-bottom: 1px solid;
 }
