@@ -19,7 +19,6 @@
                     <li class="titre">VEPRI</li>
                     <li class="logo">\V</li> 
                     <li class="border"><a href="panier.php">Panier</a></li>
-                    <li class="border"><a  href="connexion.php">Connexion</a></li>
 
                     <?php
                     if(in_array("logged",$_COOKIE) == false){
