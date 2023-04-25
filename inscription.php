@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/Style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Inscription</title>
 </head>
 
@@ -14,12 +14,12 @@
         <nav class="navbar">
             <ul>
                 <div></div>
-                <li class="border"><a href="./Femme.html">FEMME</a></li>
-                <li class="border"><a href="./Homme.html">HOMME</a></li>
+                <li class="border"><a href="femme.php">FEMME</a></li>
+                <li class="border"><a href="homme.php">HOMME</a></li>
                 <li class="titre">VEPRI</li>
                 <li class="logo">\V</li>
-                <li class="border"><a href="#">Panier</a></li>
-                <li class="border"><a href="./connexion.html">Connexion</a></li>
+                <li class="border"><a href="panier.php">Panier</a></li>
+                <li class="border"><a href="connexion.php">Connexion</a></li>
             </ul>
         </nav>
     </header>
@@ -28,7 +28,7 @@
     <div class="compte">
         <h1 class="titre_compte">COMPTE</h1>
 
-        <form action="/php/inscription.php" method="post" class="form-example">
+        <form action="php/inscriptionform.php" method="post" class="form-example">
             <p style=" padding: 20px 0px;">Création d'un compte</p>
             <div class="checkbox">
                 <input type="checkbox" id="checkbox" name="checkHomme">
@@ -158,7 +158,7 @@
         </form>
 
 
-        <div class="inscription_vendeur"><a href="./Homme.html">Inscription vendeur</a></div>
+        <div class="inscription_vendeur"><a href="homme.php">Inscription vendeur</a></div>
     </div>
 
 

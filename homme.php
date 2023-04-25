@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/Style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Homme</title>
 
-    <script src="../js/login.js"></script>
+    <script src="js/login.js"></script>
 </head>
 <body>
     <header> 
         <nav class="navbar">
                 <ul>
                     <div></div>
-                    <li class="border" ><a href="./Femme.html">FEMME</a></li>
-                    <li  style="border: 1px solid;"><a  href="#">HOMME</a></li>
+                    <li class="border" ><a href="femme.php">FEMME</a></li>
+                    <li  style="border: 1px solid;"><a  href="homme.php">HOMME</a></li>
                     <li class="titre">VEPRI</li>
                     <li class="logo">\V</li> 
-                    <li class="border"><a href="#">Panier</a></li>
-                    <li class="border"><a  href="./connexion.html">Connexion</a></li>
+                    <li class="border"><a href="panier.php">Panier</a></li>
+                    <li class="border"><a  href="connexion.php">Connexion</a></li>
                 </ul>
         </nav>
     </header>
