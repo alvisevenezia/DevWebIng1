@@ -38,14 +38,14 @@
                       <label for="checkbox">Mme.</label>
                     </div>
                     <div class="identité">
-                        <input class="prenom" type="text" placeholder="Prénom...">
-                        <input class="nom" type="text" placeholder="Nom...">
-                        <input class="email" type="text" placeholder="E-mail...">
-                        <input class="email" type="password" placeholder="Mot de passe...">
-                        <input class="email" id="date" type="date" value="Date de Naissance...">
-                        <input class="prenom" style="margin-top: 20px;" type="tel" placeholder="Tel...">
+                        <input class="prenom" type="text" placeholder="Prénom..." required>
+                        <input class="nom" type="text" placeholder="Nom..." required>
+                        <input class="email" type="text" placeholder="E-mail..." required>
+                        <input class="email" type="password" placeholder="Mot de passe..." required>
+                        <input class="email" id="date" type="date" value="Date de Naissance..." required>
+                        <input class="prenom" style="margin-top: 20px;" type="tel" placeholder="Tel..." required>
                        
-                        <div class="custom-select" >
+                        <div class="custom-select" required >
                             <select name="pays" aria-placeholder="Pays">
                                 <option value="Pays">Pays</option>
                                 <option value="France">France</option>
@@ -145,7 +145,7 @@
                         </div> 
                         <div class="checkbox3">
                             <input type="checkbox" id="checkbox2" name="check">
-                            <label class="label" for="checkbox"> J'ACCEPTE LES CONDITIONS GÉNÉRALES ET LA POLITIQUE DE CONFIDENTIALITÉ</label>
+                            <label class="label" for="checkbox" required> J'ACCEPTE LES CONDITIONS GÉNÉRALES ET LA POLITIQUE DE CONFIDENTIALITÉ</label>
                         </div>
                        
                     </div>
