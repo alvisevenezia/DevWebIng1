@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/Style.css">
-    <title>Inscription</title>
+    <title>Inscription Vendeur</title>
 </head>
 <body>
     <header> 
@@ -27,25 +27,33 @@
         <h1 class="titre_compte">COMPTE</h1>     
        
         <form action="" method="get" class="form-example">
-            <p style=" padding: 20px 0px;">Création d'un compte</p>
-                    <div class="checkbox">
-                      <input type="checkbox" id="checkbox" name="check">
-                      <label for="checkbox">Mr.</label>
-                    </div>
-                   
-                    <div class="checkbox2">
-                      <input type="checkbox" id="checkbox" name="check">
-                      <label for="checkbox">Mme.</label>
-                    </div>
-                    <div class="identité">
-                        <input class="prenom" type="text" placeholder="Prénom..." required>
-                        <input class="nom" type="text" placeholder="Nom..." required>
-                        <input class="email" type="text" placeholder="E-mail..." required>
-                        <input class="email" type="password" placeholder="Mot de passe..." required>
-                        <input class="email" id="date" type="date" value="Date de Naissance..." required>
-                        <input class="prenom" style="margin-top: 20px;" type="tel" placeholder="Tel..." required>
+            <p style=" padding: 20px 0px;">Création d'un compte vendeur</p>
+            <div class="inscription_vendeur"><a href="./contrat.html" target="_blank" rel="noopener noreferrer">Contrat d'engagement</a></div>
+            <div class="checkbox">
+                <input type="checkbox" id="checkbox" name="check">
+                <label for="checkbox">3 Mois</label>
+              </div>
+
+            <div class="checkbox">
+                <input type="checkbox" id="checkbox" name="check">
+                <label for="checkbox">6 Mois</label>
+              </div>
+             
+              <div class="checkbox2">
+                <input type="checkbox" id="checkbox" name="check">
+                <label for="checkbox">1 An</label>
+              </div>        
+
+    
+            <div class="identité">
+                        <input class="prenom" type="text" placeholder="Nom Société ...">
+                        <input class="nom" type="text" placeholder="Numéro siret ...">
+                        <input class="email" type="text" placeholder="E-mail...">
+                        <input class="email" type="password" placeholder="Mot de passe...">
+                        <input class="email" id="date" type="date" value="Date de Naissance...">
+                        <input class="prenom" style="margin-top: 20px;" type="tel" placeholder="Tel...">
                        
-                        <div class="custom-select" required >
+                        <div class="custom-select" >
                             <select name="pays" aria-placeholder="Pays">
                                 <option value="Pays">Pays</option>
                                 <option value="France">France</option>
@@ -143,23 +151,21 @@
                                 <option value="Guyane_Francaise ">Guyane_Francaise </option>
                                 </select>
                         </div> 
+                        
                         <div class="checkbox3">
                             <input type="checkbox" id="checkbox2" name="check">
-                            <label class="label" for="checkbox" required> J'ACCEPTE LES CONDITIONS GÉNÉRALES ET LA POLITIQUE DE CONFIDENTIALITÉ</label>
+                            <label class="label" for="checkbox"> J'ACCEPTE LES CONDITIONS GÉNÉRALES ET LA POLITIQUE DE CONFIDENTIALITÉ</label>
                         </div>
                        
                     </div>
                    
         </form>
 
-        <button class="valider2"  onclick="window.location.href = './inscription_vendeur.html';">Valider</button>
-        <div class="inscription_vendeur"><a href="./Homme.html">Inscription vendeur</a></div>
+        <button class="valider2"  onclick="window.location.href = './Inscription.html';">Valider</button>
+        <div class="inscription_vendeur"><a href="inscription.html">Inscription acheteur</a></div>
     </div>
 
 
 
 </body>
-</html>
-
-
 </html>
