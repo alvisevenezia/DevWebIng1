@@ -6,6 +6,7 @@ CREATE TABLE `projetweb`.`personne` (
   `codePostal` INT NOT NULL,
   `ville` VARCHAR(45) NOT NULL,
   `adresse` VARCHAR(45) NOT NULL,
+  `sexe` INT NOT NULL,
   PRIMARY KEY (`idPersonne`),
   UNIQUE INDEX `idPersonne_UNIQUE` (`idPersonne` ASC) VISIBLE);
 

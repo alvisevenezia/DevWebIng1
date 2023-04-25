@@ -28,8 +28,8 @@
        
         <form action="./php/inscriptionform.php" method="post" class="form-example">
             <p style=" padding: 20px 0px;">Création d'un compte</p>
-                    <div class="checkbox" name="checkHomme">
-                      <input type="checkbox" id="checkbox" name="check">
+                    <div class="checkbox">
+                      <input type="checkbox" id="checkbox" name="checkHomme">
                       <label for="checkbox">Mr.</label>
                     </div>
                    
