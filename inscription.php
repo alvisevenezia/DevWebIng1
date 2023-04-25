@@ -26,24 +26,24 @@
     <div class="compte">
         <h1 class="titre_compte">COMPTE</h1>     
        
-        <form action="" method="get" class="form-example">
+        <form action="./php/inscriptionform.php" method="post" class="form-example">
             <p style=" padding: 20px 0px;">Création d'un compte</p>
-                    <div class="checkbox">
+                    <div class="checkbox" name="checkHomme">
                       <input type="checkbox" id="checkbox" name="check">
                       <label for="checkbox">Mr.</label>
                     </div>
                    
                     <div class="checkbox2">
-                      <input type="checkbox" id="checkbox" name="check">
+                      <input type="checkbox" id="checkbox" name="checkFemme">
                       <label for="checkbox">Mme.</label>
                     </div>
                     <div class="identité">
-                        <input class="prenom" type="text" placeholder="Prénom..." required>
-                        <input class="nom" type="text" placeholder="Nom..." required>
-                        <input class="email" type="text" placeholder="E-mail..." required>
-                        <input class="email" type="password" placeholder="Mot de passe..." required>
-                        <input class="email" id="date" type="date" value="Date de Naissance..." required>
-                        <input class="prenom" style="margin-top: 20px;" type="tel" placeholder="Tel..." required>
+                        <input class="prenom" type="text" placeholder="Prénom..." name="prenom" required>
+                        <input class="nom" type="text" placeholder="Nom..." name="nom" required>
+                        <input class="email" type="text" placeholder="E-mail..." name="email" required>
+                        <input class="email" type="password" placeholder="Mot de passe..." name="password" required>
+                        <input class="email" id="date" type="date" value="Date de Naissance..." name="date" required>
+                        <input class="prenom" style="margin-top: 20px;" type="tel" placeholder="Tel..." name="tel" required>
                        
                         <div class="custom-select" required >
                             <select name="pays" aria-placeholder="Pays">
@@ -144,15 +144,17 @@
                                 </select>
                         </div> 
                         <div class="checkbox3">
-                            <input type="checkbox" id="checkbox2" name="check">
+                            <input type="checkbox" id="checkbox2" name="check" required>
                             <label class="label" for="checkbox" required> J'ACCEPTE LES CONDITIONS GÉNÉRALES ET LA POLITIQUE DE CONFIDENTIALITÉ</label>
                         </div>
                        
                     </div>
+
+                    <button class="valider2" type="submit">Valider</button>
                    
         </form>
 
-        <button class="valider2"  onclick="window.location.href = './inscription_vendeur.html';">Valider</button>
+        
         <div class="inscription_vendeur"><a href="./Homme.html">Inscription vendeur</a></div>
     </div>
 
