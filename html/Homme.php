@@ -14,12 +14,24 @@
         <nav class="navbar">
                 <ul>
                     <div></div>
-                    <li class="border" ><a href="./Femme.html">FEMME</a></li>
+                    <li class="border" ><a href="./Femme.php">FEMME</a></li>
                     <li  style="border: 1px solid;"><a  href="#">HOMME</a></li>
                     <li class="titre">VEPRI</li>
                     <li class="logo">\V</li> 
                     <li class="border"><a href="#">Panier</a></li>
-                    <li class="border"><a  href="./connexion.html">Connexion</a></li>
+                    <?php
+
+                    if(in_array("logged",$_COOKIE) == false){
+                        setcookie("logged", "true", time() + 3600);
+                    }
+
+                    if($_COOKIE["logged"] == "true"){
+                        echo "<li class='border'><a href='./profil.php'>Profil</a></li>";
+                    }
+                    else{
+                        echo "<li class='border'><a href='./connexion.html'>Connexion</a></li>";
+                    }
+                    ?>
                 </ul>
         </nav>
     </header>

@@ -13,7 +13,7 @@
                 <ul>
                     <div></div>
                     <li style="border: 1px solid;">FEMME</a></li>
-                    <li class="border" ><a href="./Homme.html">HOMME</a></li>
+                    <li class="border" ><a href="./Homme.php">HOMME</a></li>
                     <li class="titre">VEPRI</li>
                     <li class="logo">\V</li> 
                     <li class="border"><a href="#">Panier</a></li>

@@ -15,6 +15,8 @@ else{
 }
 
 
-$mysqli = new mysqli("localhost", "web", "web", "projetweb");
+$mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
+
+echo $mysqli->host_info . "\n";
 
 $result = $mysqli->query("INSERT INTO personne(prenom,nom,dateNaissance,codePostal,ville,adresse) VALUES ('$prenom','$nom','$date','0000','0','0')");
