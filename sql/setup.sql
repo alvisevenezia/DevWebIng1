@@ -1,5 +1,5 @@
 CREATE TABLE `projetweb`.`personne` (
-  `idPersonne` INT NOT NULL,
+  `idPersonne` INT NOT NULL AUTO_INCREMENT,
   `prenom` VARCHAR(45) NOT NULL,
   `nom` VARCHAR(45) NOT NULL,
   `dateNaissance` DATE NOT NULL,
