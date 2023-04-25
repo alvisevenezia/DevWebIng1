@@ -17,7 +17,18 @@
                     <li class="titre">VEPRI</li>
                     <li class="logo">\V</li> 
                     <li class="border"><a href="panier.php">Panier</a></li>
-                    <li class="border"><a  href="connexion.php">Connexion</a></li>
+                    <?php
+                    if(in_array("logged",$_COOKIE) == false){
+                        setcookie("logged", "true", time() + 3600);
+                    }
+
+                    if($_COOKIE["logged"] == "true"){
+                        echo "<li class='border'><a href='./profil.php'>Profil</a></li>";
+                    }
+                    else{
+                        echo "<li class='border'><a href='./connexion.html'>Connexion</a></li>";
+                    }
+                    ?>
                 </ul>
         </nav>
     </header>
