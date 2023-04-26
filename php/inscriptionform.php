@@ -12,21 +12,23 @@ $ville = "0";
 
 if($_POST["checkHomme"] = "on"){
   $sexe = "Homme";
+  $sexesql = 0;
 }
 else{
   $sexe = "Femme";
+  $sexesql = 1;
 }
 
 
 $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
-
-echo $mysqli->host_info . "\n";
 $result = $mysqli->query("INSERT INTO login(idLogin,mdp) VALUES ('$email','$password')");
-$result = $mysqli->query("INSERT INTO personne(prenom,nom,dateNaissance,codePostal,ville,adresse) VALUES ('$prenom','$nom','$date','$codePostal','$ville','$adresse')");
+$result = $mysqli->query("INSERT INTO personne(prenom,nom,dateNaissance,codePostal,ville,adresse,sexe) VALUES ('$prenom','$nom','$date','$codePostal','$ville','$adresse','$sexesql')");
 
 if(!in_array("sexe",$_COOKIE)){
   setcookie("sexe", "Homme", time() + 3600);
 }
+
+setcookie("logged", "true", time() + 3600);
 
 if($_COOKIE["sexe"] == "Homme"){
  header('Location: ../homme.php');
