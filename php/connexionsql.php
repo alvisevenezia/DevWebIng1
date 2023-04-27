@@ -1,30 +1,34 @@
 <?php
 
+session_start();
+
 $login = $_POST['login'];
 $password = $_POST['password'];
 
 $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
 
-$result = $mysqli->query("SELECT * FROM login WHERE idLogin = '$login' AND mdp = '$password'");
+$result = $mysqli->query("SELECT MDP FROM login WHERE idLogin = '$login'");
+$row = $result->fetch_assoc();
 
-if($result->num_rows == 1){
+if($row["MDP"] == $password){
 
-    $_COOKIE["logged"] = "true";
+    $_SESSION["logged"] = "true";
+    echo $_SESSION["logged"];
     $sexe = $mysqli->query("SELECT sexe FROM personne WHERE idLogin = '$login'");
 
     if($sexe == 0){
-        $sexe = "Homme";
+        $sexe = "femme";
     }
     else{
-        $sexe = "Femme";
+        $sexe = "homme";
     }
 
-    $_COOKIE["sexe"] = $sexe;
+    $_SESSION["sexe"] = $sexe;
     
 
 }else{
 
-    $_COOKIE["logged"] = "false";
+    $_SESSION["logged"] = "false";
 
 }
 
