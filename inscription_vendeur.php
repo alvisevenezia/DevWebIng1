@@ -12,12 +12,12 @@
         <nav class="navbar">
                 <ul>
                     <div></div>
-                    <li class="border" ><a href="./Femme.html">FEMME</a></li>
-                    <li class="border" ><a href="./Homme.html">HOMME</a></li>
+                    <li class="border" ><a href="femme.php">FEMME</a></li>
+                    <li class="border" ><a href="homme.php">HOMME</a></li>
                     <li class="titre">VEPRI</li>
                     <li class="logo">\V</li> 
                     <li class="border"><a href="#">Panier</a></li>
-                    <li class="border"><a  href="./connexion.html">Connexion</a></li>
+                    <li class="border"><a  href="connexion.php">Connexion</a></li>
                 </ul>
         </nav>
     </header>
@@ -26,9 +26,9 @@
     <div class="compte">
         <h1 class="titre_compte">COMPTE</h1>     
        
-        <form action="" method="get" class="form-example">
+        <form action="./php/inscriptionform.php" method="psot" class="form-example">
             <p style=" padding: 20px 0px;">Création d'un compte vendeur</p>
-            <div class="inscription_vendeur"><a href="./contrat.html" target="_blank" rel="noopener noreferrer">Contrat d'engagement</a></div>
+            <div class="inscription_vendeur"><a href="./contrat.php" target="_blank" rel="noopener noreferrer">Contrat d'engagement</a></div>
             <div class="checkbox">
                 <input type="checkbox" id="checkbox" name="check">
                 <label for="checkbox">3 Mois</label>
@@ -46,15 +46,15 @@
 
     
             <div class="identité">
-                        <input class="prenom" type="text" placeholder="Nom Société ...">
-                        <input class="nom" type="text" placeholder="Numéro siret ...">
-                        <input class="email" type="text" placeholder="E-mail...">
-                        <input class="email" type="password" placeholder="Mot de passe...">
-                        <input class="email" id="date" type="date" value="Date de Naissance...">
-                        <input class="prenom" style="margin-top: 20px;" type="tel" placeholder="Tel...">
+                        <input class="prenom" type="text" placeholder="Nom Société ..." name="nom">
+                        <input class="nom" type="text" placeholder="Numéro siret ..." name="siret">
+                        <input class="email" type="text" placeholder="E-mail..." name="email">
+                        <input class="email" type="password" placeholder="Mot de passe..." name="mdp">
+                        <input class="email" id="date" type="date" value="Date de Naissance..." name="creation">
+                        <input class="prenom" style="margin-top: 20px;" type="tel" placeholder="Tel..." name="tel">
                        
                         <div class="custom-select" >
-                            <select name="pays" aria-placeholder="Pays">
+                            <select name="pays" aria-placeholder="Pays" name="pays">
                                 <option value="Pays">Pays</option>
                                 <option value="France">France</option>
                                 <option value="Afghanistan">Afghanistan </option>
@@ -158,11 +158,11 @@
                         </div>
                        
                     </div>
+
+                <button class="valider2" type="submit">Valider</button>
                    
         </form>
-
-        <button class="valider2"  onclick="window.location.href = './Inscription.html';">Valider</button>
-        <div class="inscription_vendeur"><a href="inscription.html">Inscription acheteur</a></div>
+        <div class="inscription_vendeur"><a href="inscription.php">Inscription acheteur</a></div>
     </div>
 
 

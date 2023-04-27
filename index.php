@@ -1,9 +1,10 @@
 <?php
 
+require "./php/sessionutils.php";
 
-if($_COOKIE["sexe"] == "Homme"){
+if($_SESSION["sexe"] == "homme"){
    header('Location: ./homme.php');
 }
 else{
     header('Location: ./femme.php');
-}
+}   
