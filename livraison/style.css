@@ -475,7 +475,7 @@ hr{
   padding-bottom: 20px;
 }
 .prenom{
-  margin-top: 20px;
+  margin-top: 5px;
   border: 2px solid;
   float:left;
   height: 3px;
@@ -484,7 +484,7 @@ hr{
 }
 
 .nom{
-  margin-top: 20px;
+  margin-top: 5px;
   border: 2px solid;
   float:right;
   height: 3px;
@@ -518,4 +518,68 @@ hr{
 .contrat{
   font-size:1em ; 
   margin: 20px;
+}
+
+
+
+.information-perso,
+.button,
+.information-perso2 {
+  display: block;
+}
+
+.information-perso{
+  padding:50px 0px 150px 0px;
+}
+
+.container {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+
+.left-container, .right-container {
+  flex: 1;
+  margin-right: 10px;
+  
+}
+
+.left-container h4, .right-container h4 {
+  margin-bottom: 5px;
+}
+
+.left-container input, .right-container input {
+  width: 93%;
+}
+
+.produits-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.produit {
+  width: 30%;
+}
+
+.produit h4,
+.produit p {
+    margin: 10px 0;
+}
+
+.produit img {
+  width: 100%;
+  height: 200px; /* Définissez ici la hauteur souhaitée */
+  object-fit: cover; /* Optionnel : pour ajuster l'image à la taille spécifiée */
+}
+
+
+.historique-produits {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.historique-produits.visible {
+  max-height: 500px; /* Ajustez la valeur en fonction du contenu de l'historique */
+  transition: max-height 0.3s ease-in-out;
 }

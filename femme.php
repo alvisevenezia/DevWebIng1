@@ -1,3 +1,7 @@
+<?php
+require "./php/sessionutils.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +22,9 @@
                     <li class="logo">\V</li> 
                     <li class="border"><a href="panier.php">Panier</a></li>
                     <?php
-                    if(in_array("logged",$_COOKIE) == false){
-                        setcookie("logged", "false", time() + 3600);
-                    }
 
-                    if($_COOKIE["logged"] == "true"){
+                    if($_SESSION["logged"] == "true"){
+                        echo "<li class='border'><a href='./php/deconnexion.php'>Deconnexion</a></li>";
                         echo "<li class='border'><a href='./profil.php'>Profil</a></li>";
                     }
                     else{
