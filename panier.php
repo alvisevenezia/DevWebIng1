@@ -7,6 +7,10 @@
   <link href="css/panier.css" type="text/css" title="Mon design 1" rel="stylesheet">
 </head>
 <body>
+    <header>
+    <?php include_once('navbar.php');?>
+    </header>
+    <hr>
     <section>
         <!--  titre panier -->
         <div>

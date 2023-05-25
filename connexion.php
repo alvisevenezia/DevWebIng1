@@ -9,19 +9,9 @@
 </head>
 <body>
     <header> 
-        <nav class="navbar">
-                <ul>
-                    <div></div>
-                    <li class="border" ><a href="femme.php">FEMME</a></li>
-                    <li class="border" ><a href="homme.php">HOMME</a></li>
-                    <li class="titre">VEPRI</li>
-                    <li class="logo">\V</li> 
-                    <li class="border"><a href="#">Panier</a></li>
-                    <li class="border"><a  href="./connexion.php">Connexion</a></li>
-                </ul>
-        </nav>
-        </header>
-        <hr>
+        <?php include_once('navbar.php');?>
+    </header>
+    <hr>
     
         <div class="compte">
             <h1 class="titre_compte">COMPTE</h1>
