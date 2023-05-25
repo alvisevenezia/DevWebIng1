@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Livraison de Colis</title>
+    <link rel="stylesheet" type="text/css" href="livraison.css">
+</head>
+<body>
+    <header>
+        <h1>ColisPoste</h1>
+        <nav>
+            <ul>
+                <li><a href="livraison.html"></a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="connexion.html">Connexion</a></li> <!-- Nouveau lien pour la page de connexion -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="banner">
+        <h2>Livraison de Colis Rapide et Fiable</h2>
+        <p>Confiez-nous vos colis et bénéficiez d'un service de livraison sécurisé.</p>
+    
+    </section>
+
+    <section id="tracking">
+        <h2>Suivi de Colis</h2>
+        <form>
+            <label for="tracking-number">Numéro de Suivi :</label>
+            <input type="text" id="tracking-number" name="tracking-number" required>
+            <input type="submit" value="Suivre">
+        </form>
+    </section>
+
+    
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Remplissez le formulaire ci-dessous pour nous contacter :</p>
+        <form>
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Envoyer">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 La Poste. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
