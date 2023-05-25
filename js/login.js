@@ -1,8 +1,19 @@
-function oullourt(){
-    alert("HELO");
-} 
+async function sendLoginInfo(){
 
-function balbal(x,y){
+    const resposne = await fetch('http://localhost:8000/php/sqlutils.php', {
+        method: 'POST',
+        mode: "no-cors",
+        headers: {
+            'Content-Type': 'application/json'
 
-    return x+y
-}
+        },
+        body: JSON.stringify({
+            username : "rooot",
+            password : "1234"
+        })
+    });7
+
+    console.log(resposne);
+    
+
+}   

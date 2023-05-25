@@ -1,30 +1,40 @@
+<?php
+require "./php/sessionutils.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/Style.css">
-    <title>Homme</title>
-
-    <script src="../js/login.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Femme</title>
 </head>
 <body>
     <header> 
         <nav class="navbar">
                 <ul>
                     <div></div>
-                    <li class="border" ><a href="./Femme.html">FEMME</a></li>
-                    <li  style="border: 1px solid;"><a  href="#">HOMME</a></li>
+                    <li style="border: 1px solid;"><a href="femme.php">FEMME</a></li>
+                    <li class="border" ><a href="homme.php">HOMME</a></li>
                     <li class="titre">VEPRI</li>
                     <li class="logo">\V</li> 
-                    <li class="border"><a href="#">Panier</a></li>
-                    <li class="border"><a onclick="oullourt()">Connexion</a></li>
+                    <li class="border"><a href="panier.php">Panier</a></li>
+                    <?php
+
+                    if($_SESSION["logged"] == "true"){
+                        echo "<li class='border'><a href='./php/deconnexion.php'>Deconnexion</a></li>";
+                        echo "<li class='border'><a href='./profil.php'>Profil</a></li>";
+                    }
+                    else{
+                        echo "<li class='border'><a href='./connexion.php'>Connexion</a></li>";
+                    }
+                    ?>
                 </ul>
         </nav>
     </header>
     <hr>
-    
     <div class="menu">
         <ul>
             <li class="border" style="font-weight: bold;"> <a href="#">NEWS</a></li>
@@ -54,7 +64,7 @@
         </ul>
     </div>
 
-    <p style="text-align: center; font-size: 7rem; margin-bottom: 5px;">HOMME</p>
+    <p style="text-align: center; font-size: 7rem; margin-bottom: 5px;">FEMME</p>
 
 
     <div class="slider">
@@ -65,9 +75,9 @@
                 <div id="img4">
                 <div id="img5">
                     <div class="slider-content">
-                        <img src="https://urlv.fr/68d2">
-                        <img src="https://urlv.fr/h8z8">
-                        <img src="https://urlv.fr/8egc">
+                        <img src="https://cutt.ly/z8Dp2p9">
+                        <img src="https://vu.fr/VvuM">
+                        <img src="https://vu.fr/AKTd">
                     </div>
                 </div>
                 </div>
@@ -89,7 +99,7 @@
     </div>
 
     <div class="wrapper">
-        <img src="https://urlv.fr/anqp">
+        <img src="https://rb.gy/44w4e">
         <div class="overlay">
             <div class="content">
                 <a> Voir plus </a>
@@ -97,7 +107,7 @@
         </div>
     </div>
     <div class="wrapper">
-        <img src="https://urlv.fr/h7h0">
+        <img src="https://rb.gy/l4y35">
         <div class="overlay">
             <div class="content">
                 <a> Voir plus </a>
@@ -105,7 +115,7 @@
         </div>
     </div>
     <div class="wrapper">
-        <img src="https://urlv.fr/g76b">
+        <img src="https://rb.gy/btcis">
         <div class="overlay">
             <div class="content">
                 <a> Voir plus </a>
@@ -113,7 +123,7 @@
         </div>
     </div>
     <div class="wrapper2">
-        <img src="https://urlv.fr/a0sw">
+        <img src="https://rb.gy/wphgk">
         <div class="overlay">
             <div class="content">
                 <a> Voir plus </a>
@@ -121,7 +131,7 @@
         </div>
     </div>
     <div class="wrapper2">
-        <img src="https://urlv.fr/7uxz">
+        <img src="https://rb.gy/m1ff1">
         <div class="overlay">
             <div class="content">
                 <a> Voir plus </a>
