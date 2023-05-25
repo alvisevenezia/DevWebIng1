@@ -329,7 +329,7 @@ hr{
 
 .compte{
   margin: auto;
-  height: 800px;
+  height: 900px;
   width: 1200px;
   padding: 10px;
 }
@@ -432,6 +432,8 @@ hr{
 }
 
 
+
+
 #checkbox{
   height: 20px;
   width: 20px;
@@ -456,6 +458,13 @@ hr{
   float: left;
   font-size: 10px;
   padding-top: 20px;
+}
+
+
+.checkbox4{
+  display: flex;
+  font-size: 15px;
+  padding: 20px;
 }
 
 .checkbox label{
@@ -500,7 +509,13 @@ hr{
 .inscription_vendeur{
   display: block;
   float: left;
-  padding-top: 15px;
+  padding-top: 5px;
+  margin: 0px 40px;
   font-size: 12px;
   border-bottom: 1px solid;
+}
+
+.contrat{
+  font-size:1em ; 
+  margin: 20px;
 }
