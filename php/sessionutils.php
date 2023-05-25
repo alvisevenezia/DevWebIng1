@@ -2,10 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION["sexe"])){
-    $_SESSION["sexe"] = "undifined";
-}
-
 if(!isset($_SESSION["logged"])){
     $_SESSION["logged"] = "false";
 }
+?>
