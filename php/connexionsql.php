@@ -8,7 +8,9 @@ $password = $_POST['password'];
 $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
 
 $result = $mysqli->query("SELECT MDP FROM login WHERE idLogin = '$login'");
+
 $row = $result->fetch_assoc();
+echo $row["MDP"];
 
 if($row["MDP"] == $password){
 
