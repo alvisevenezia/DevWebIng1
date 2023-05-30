@@ -20,7 +20,7 @@
             <p style=" padding: 20px 0px;">Création d'un compte</p>
                     <div class="checkbox">
                       <input type="checkbox" id="checkbox" name="checkHomme">
-                      <label for="checkbox">Mr.</label>
+                      <label for="checkbox">M.</label>
                     </div>
                    
                     <div class="checkbox2">
