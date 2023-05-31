@@ -583,3 +583,153 @@ hr{
   max-height: 500px; /* Ajustez la valeur en fonction du contenu de l'historique */
   transition: max-height 0.3s ease-in-out;
 }
+
+
+/* page produit*/
+
+
+.product-container {
+  display: flex;
+  gap: 30%;
+  padding-top: 20px;
+}
+
+.product-image {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
+.product-image img {
+  max-width: 150%;
+  max-height: 600px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  padding-top: 80px;
+  width: 40%; /* Réduire la largeur de la div de droite */
+}
+
+.product-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product-size {
+  margin-bottom: 20px;
+}
+
+.product-size label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.product-size button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: inherit;/* Couleur de fond du bouton */
+  
+  border: 2px solid transparent; /* Bordure transparente */
+  cursor: pointer;
+}
+
+.product-size button:hover {
+  background-color: #d0d0d0; /* Couleur de fond au survol */
+  border: 2px solid;
+}
+
+.product-size button:active {
+  border: 2px solid; /* Couleur de la bordure lorsqu'appuyé */
+}
+
+.product-size button.selected {
+  border: 2px solid; 
+}
+
+.add-to-cart button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color:#6cff59;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart button:hover {
+  background-color: #6cff59;
+  transform: scale(1.1);
+}
+
+.add-to-cart button:active {
+  background-color: #00ff08;
+  transform: scale(0.9);
+}
+
+.product-description,
+.product-service {
+  margin-top: 20px;
+}
+
+.product-description button,
+.product-service button {
+  width: 90%;
+  padding: 10px;
+  font-size: 14px;
+  background-color: inherit; /* Fond du bouton de la même couleur que le fond du site */
+  border: none;
+  border-top: 2px solid black; /* Seul le bord inférieur est visible en noir */
+  color: black; /* Couleur du texte */
+   text-align: left; /* Alignement du texte à gauche */
+}
+
+.product-description-content,
+.product-service-content {
+  display: none;
+  font-size: 10px;
+  line-height: 1.5;
+  padding: 10px;
+  width: 50%;
+}
+
+.product-description-content.show,
+.product-service-content.show {
+  display: block;
+}
+
+.popup {
+  position: fixed;
+  top: 10px; /* Ajustez ces valeurs selon votre besoin */
+  right: 10px; /* Ajustez ces valeurs selon votre besoin */
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none;
+}
+
+.popup img {
+  width: 50px; /* Ajustez cette valeur selon votre besoin */
+  height: 50px; /* Ajustez cette valeur selon votre besoin */
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.popup h3, .popup p {
+  margin: 0;
+  padding: 0;
+}
