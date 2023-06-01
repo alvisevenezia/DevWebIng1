@@ -23,34 +23,7 @@ $sexe=$_GET['sexe'];
         <?php include_once('navbar.php');?>
     </header>
     <hr>
-    <div class="menu">
-        <ul>
-            <li class="border" style="font-weight: bold;"> <a href="#">NEWS</a></li>
-            <li class="border" style="font-weight: bold;"> <a>MARQUE</a>  
-                <div class="submenu2"><ul class="submenu">
-                    <li><a href="#">Nike</a></li>
-                    <li><a href="#">Carhartt</a></li>
-                    <li><a href="#">Adidas</a></li>
-                </ul>   
-            </li>
-
-            <li class="border" style="font-weight: bold;"> <a>VETEMENTS</a>
-                <ul class="submenu" >
-                    <li><a href="#">Pantalon</a></li>
-                    <li><a href="#">T-Shirt</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Hoddies</a></li>
-                </ul>
-            </li>
-            <li class="border" style="font-weight: bold;"> <a>ACCESSOIRES</a>
-                <ul class="submenu">
-                    <li><a href="#">Ring</a></li>
-                    <li><a href="#">Hat</a></li>
-                    <li><a href="#">Socks</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    <?php include_once('menuBar.php');?>
     <?php echo(" <p style='text-transform: uppercase; text-align: center; font-size: 7rem; margin-bottom: 5px;'>$sexe</p> ");?>
 
 
@@ -85,45 +58,31 @@ $sexe=$_GET['sexe'];
         <img src="http://bitly.ws/CMtp">
     </div>
 
-    <div class="wrapper">
-        <img src="https://rb.gy/44w4e">
-        <div class="overlay">
-            <div class="content">
-                <a> Voir plus </a>
-            </div>
-        </div>
-    </div>
-    <div class="wrapper">
-        <img src="https://rb.gy/l4y35">
-        <div class="overlay">
-            <div class="content">
-                <a> Voir plus </a>
-            </div>
-        </div>
-    </div>
-    <div class="wrapper">
-        <img src="https://rb.gy/btcis">
-        <div class="overlay">
-            <div class="content">
-                <a> Voir plus </a>
-            </div>
-        </div>
-    </div>
-    <div class="wrapper2">
-        <img src="https://rb.gy/wphgk">
-        <div class="overlay">
-            <div class="content">
-                <a> Voir plus </a>
-            </div>
-        </div>
-    </div>
-    <div class="wrapper2">
-        <img src="https://rb.gy/m1ff1">
-        <div class="overlay">
-            <div class="content">
-                <a> Voir plus </a>
-            </div>
-        </div>
+    <div class="produit">
+
+           <?php 
+           $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
+            $result = $mysqli->query("SELECT * FROM produit");
+
+            while($row = $result->fetch_assoc()){
+                echo("<div class='wrapper'>");
+                echo("<a href=''>");
+                echo("<img src='./assets/img/".$row["photo"]."'>");
+                echo("</a>");
+                echo("<div class='product-price'>");
+                echo("<div class='price-background'></div>");
+                echo("<div class='price-text'>Prix: ".$row["prix"]."€</div>");
+                echo("</div>");
+                echo("<div class='overlay'>");
+                echo("<div class='content'>");
+                echo("<a href='#'>Voir plus</a>");
+                echo("</div>");
+                echo("</div>");
+                echo("</div>");
+            }
+
+            ?>
+
     </div>
 
 
