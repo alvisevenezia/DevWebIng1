@@ -35,7 +35,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Erreur lors de l'ajout du produit: " . $conn->error;
 }
-
+*
 // Fermer la connexion à la base de données
 $conn->close();
 ?>

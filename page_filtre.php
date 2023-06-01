@@ -57,7 +57,7 @@
     </header>
     <hr>
     <?php include_once('menuBar.php');?>
-    <?php echo(" <p style='text-transform: uppercase; text-align: center; font-size: 7rem; margin-bottom: 5px;'>Carhartt</p> ");?>
+    <?php echo(" <p style='text-transform: uppercase; text-align: center; font-size: 7rem; margin-bottom: 5px;'>".$_GET['value']."</p> ");?>
 
 
     <div class="slider">
@@ -87,7 +87,7 @@
 
     <p><i class="fa-regular fa-bag-shopping"></i></p>
     <div class="New_in">
-        <h1>NEW IN \\\\CARHARTT </h1>
+        <h1>NEW IN \\\\<?php echo($_GET['value']) ?> </h1>
         <img src="http://bitly.ws/CMtp">
     </div>
 
@@ -96,11 +96,12 @@
         <?php
 
             $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
-            $result = $mysqli->query("SELECT * FROM produit WHERE marque = 'carhartt'");
+
+            $result = $mysqli->query("SELECT * FROM produit WHERE ".$_GET['filtre']." = '".$_GET['value']."'");
 
             while($row = $result->fetch_assoc()){
                 echo("<div class='product-item'>");
-                echo("<a href=''>");
+                echo("<a href='page_produit.php?filtre=idproduit&value=".$row["idproduit"]."'>");
                 echo("<img src='./assets/img/".$row["photo"]."'>");
                 echo("</a>");
                 echo("<div class='product-price'>");

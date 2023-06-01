@@ -1,10 +1,17 @@
+<?php 
+
+    $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
+    $result = $mysqli->query("SELECT * FROM produit WHERE ".$_GET['filtre']." = ".$_GET['value']."");
+    $data = $result->fetch_assoc();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Style.css">
     <title>Profil</title>
     <style>
         .popup {
@@ -40,17 +47,28 @@
     <body>
         <div class="product-container">
             <div class="product-image">
-                <img src="https://tinyurl.com/32htxj6p" alt="Product Image">
-                <img src="https://tinyurl.com/2p8hm2t3" alt="Product Image">
+                
+                <?php
+                    echo "<img src='./assets/img/".$data["photo"]."'.>";
+                ?>
             </div>
             <div class="product-details">
-                <h1 class="product-name">Nom du Produit</h1>
-                <h2 class="product-price">Prix du Produit</h2>
+                <h1 class="product-name">
+                    <?php
+                        echo $data['nom'];
+                    ?>
+
+                </h1>
+                <h2 class="product-price">
+                    <?php
+                        echo $data['prix'];
+                    ?>
+                </h2>
                 <div class="product-size">
                     <label>Taille:</label>
                     <button class="size-button">XS</button>
                     <button class="size-button">S</button>
-                    <button class="size-button">M</button>
+                    <button class="size-button">M</button>  
                     <button class="size-button">L</button>
                 </div>
                 <div class="add-to-cart">
@@ -59,19 +77,11 @@
                 <div class="product-description">
                     <button onclick="toggleContent('description')">Description</button>
                     <div class="product-description-content">
-                        <p>SHORT BY NIKE POUR HOMME.</p>
-                        <br>
-                        <ul>
-                            <li>- TAILLE HAUTE</li>
-                            <li>- POCHES LATÉRALES</li>
-                            <li>- ÉTIQUETTE LOGO DE MARQUE</li>
-                            <li>- COUPE CLASSIQUE</li>
-                        </ul>
-                        <br>
-                        <p>RÉFÉRENCE FOURNISSEUR : DX0523-455-BLEU-BLEU</p>
-                        <br>
-                        <p>COLORIS : BLEU</p>
-                        <p>COMPOSITION : 100% AUTRE MATÉRIAU</p>
+                        <?php
+
+                            echo $data['description'];
+
+                        ?>
                     </div>
                 </div>
                 <div class="product-service">
