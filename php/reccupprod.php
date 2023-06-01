@@ -11,7 +11,7 @@ $description = $_POST['description'];
 // Traitement de l'image
 $photo = $_FILES['photo']['name'];
 $photo_tmp = $_FILES['photo']['tmp_name'];
-$photo_dest = 'H:\Desktop\DevWeb\vepri\img/' . $nom .'.png';
+$photo_dest = './assets/img/' . $photo;
 move_uploaded_file($photo_tmp, $photo_dest);
 
 // Connexion à la base de données

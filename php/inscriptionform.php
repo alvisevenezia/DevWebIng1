@@ -1,6 +1,6 @@
 <?php
 
-require " sessionutils.php";
+require "sessionutils.php";
 
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
@@ -42,5 +42,7 @@ print_r($mysqli->error_list);
 
 $_SESSION["logged"] = "true";
 $_SESSION["client"] = "true";
+$_SESSION["sexe"] = $sexe;
+$_SESSION["idLogin"] = $email;
 
 header('Location: ../index.php');

@@ -46,5 +46,6 @@ $result = $mysqli->query("INSERT INTO vendeur(dateInscription,chiffreAffaire,com
 
 $_SESSION["logged"] = "true";
 $_SESSION["client"] = "false";
+$_SESSION["idLogin"] = $email;
 
-print_r($mysqli->error_list);
+header('Location: ../index.php');
