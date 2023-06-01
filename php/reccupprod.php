@@ -3,7 +3,6 @@
 extract($_POST);
 $nom = $_POST['nom'];
 $type = $_POST['type'];
-$marque = $_POST['marque'];
 $taille = $_POST['taille'];
 $stock = $_POST['quantite'];
 $prix = $_POST['prix'];
@@ -12,7 +11,7 @@ $description = $_POST['description'];
 // Traitement de l'image
 $photo = $_FILES['photo']['name'];
 $photo_tmp = $_FILES['photo']['tmp_name'];
-$photo_dest = 'H:\Desktop\DevWeb\vepri\img/' . $photo;
+$photo_dest = 'H:\Desktop\DevWeb\vepri\img/' . $nom .'.png';
 move_uploaded_file($photo_tmp, $photo_dest);
 
 // Connexion à la base de données
@@ -28,8 +27,8 @@ if ($conn->connect_error) {
 }
 
 // Préparer et exécuter la requête SQL pour insérer le produit dans la base de données
-$sql = "INSERT INTO produit (nom, type, marque, taille, stock, prix, description, photo)
-        VALUES ('$nom', '$type', '$marque', '$taille', '$stock', '$prix', '$description', '$photo_dest')";
+$sql = "INSERT INTO produit (nom, type, taille, stock, prix, description, photo)
+        VALUES ('$nom', '$type', '$taille', '$stock', '$prix', '$description', '$photo_dest')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Le produit a été ajouté avec succès!";
