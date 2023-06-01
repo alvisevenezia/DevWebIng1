@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Ajouter un produit</title>
         
     </head>
@@ -15,8 +15,8 @@
     <hr>
  
     <div class="compte">
-        <h1 class="titre_compte">VENTE</h1>     
-        <form action="./php/inscriptionform.php" method="post" class="form-example">
+        <h1 class="titre_compte">COMPTE</h1>     
+        <form action="vente.php" method="post" class="form-example">
             <p style="padding: 20px 0px;">Vente d'un produit</p>
                    
                 <div class="container">

@@ -5,7 +5,7 @@ $nom = $_POST['nom'];
 $type = $_POST['type'];
 $marque = $_POST['marque'];
 $taille = $_POST['taille'];
-$quantite = $_POST['quantite'];
+$stock = $_POST['quantite'];
 $prix = $_POST['prix'];
 $description = $_POST['description'];
 
@@ -28,8 +28,8 @@ if ($conn->connect_error) {
 }
 
 // Préparer et exécuter la requête SQL pour insérer le produit dans la base de données
-$sql = "INSERT INTO produit (nom, type, marque, taille, quantite, prix, description, photo)
-        VALUES ('$nom', '$type', '$marque', '$taille', '$quantite', '$prix', '$description', '$photo_dest')";
+$sql = "INSERT INTO produit (nom, type, marque, taille, stock, prix, description, photo)
+        VALUES ('$nom', '$type', '$marque', '$taille', '$stock', '$prix', '$description', '$photo_dest')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Le produit a été ajouté avec succès!";
