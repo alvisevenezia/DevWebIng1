@@ -12,19 +12,19 @@ $description = $_POST['description'];
 // Traitement de l'image
 $photo = $_FILES['photo']['name'];
 $photo_tmp = $_FILES['photo']['tmp_name'];
-$photo_dest = '../img/' . $photo;
+$photo_dest = 'H:\Desktop\DevWeb\vepri\img/' . $photo;
 move_uploaded_file($photo_tmp, $photo_dest);
 
 // Connexion à la base de données
-$servername = "localhost";
-$username = "nom_utilisateur";
-$password = "mot_de_passe";
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
 $dbname = "projetweb";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Vérifier la connexion à la base de données
 if ($conn->connect_error) {
-    die("Échec de la connexion à la base de données: " . $conn->connect_error);
+    die("Échec de la connexion à la base de données : " . $conn->connect_error);
 }
 
 // Préparer et exécuter la requête SQL pour insérer le produit dans la base de données
