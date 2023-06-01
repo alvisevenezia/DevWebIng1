@@ -45,6 +45,8 @@ CREATE TABLE `projetweb`.`client` (
   `marque` VARCHAR(45) NOT NULL,
   `type` INT NOT NULL,
   `taille` INT NOT NULL,
+  `desciption` VARCHAR(45),
+  `photo` VARCHAR(45) NOT NULL,
   UNIQUE INDEX `idproduit_UNIQUE` (`idproduit` ASC) VISIBLE,
   PRIMARY KEY (`idproduit`));
 
