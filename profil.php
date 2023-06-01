@@ -4,23 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Profil</title>
 </head>
 <body>
     <header> 
-        <nav class="navbar">
-                <ul>
-                    <div></div>
-                    <li class="border" ><a href=#>FEMME</a></li>
-                    <li class="border" ><a href=#>HOMME</a></li>
-                    <li class="titre">VEPRI</li>
-                    <li class="logo">\V</li> 
-                    <li class="border"><a href="#">Panier</a></li>
-                    <li class="border"><a  href=#>Connexion</a></li>
-                </ul>
-        </nav>
-        </header>
+      <?php include_once('navbar.php');?>
+    </header>
         <hr>
     
         <div class="compte">

@@ -16,21 +16,21 @@
     <div class="compte">
         <h1 class="titre_compte">COMPTE</h1>     
        
-        <form action="./php/inscriptionform.php" method="psot" class="form-example">
+        <form action="./php/inscriptionformvendeur.php" method="post" class="form-example">
             <p style=" padding: 20px 0px;">Création d'un compte vendeur</p>
             <div class="inscription_vendeur"><a href="./contrat.php" target="_blank" rel="noopener noreferrer">Contrat d'engagement</a></div>
             <div class="checkbox">
-                <input type="checkbox" id="checkbox" name="check">
+                <input type="checkbox" id="checkbox" name="check3">
                 <label for="checkbox">3 Mois</label>
               </div>
 
             <div class="checkbox">
-                <input type="checkbox" id="checkbox" name="check">
+                <input type="checkbox" id="checkbox" name="check6">
                 <label for="checkbox">6 Mois</label>
               </div>
              
               <div class="checkbox2">
-                <input type="checkbox" id="checkbox" name="check">
+                <input type="checkbox" id="checkbox" name="check1">
                 <label for="checkbox">1 An</label>
               </div>        
 
@@ -39,8 +39,8 @@
                         <input class="prenom" type="text" placeholder="Nom Société ..." name="nom">
                         <input class="nom" type="text" placeholder="Numéro siret ..." name="siret">
                         <input class="email" type="text" placeholder="E-mail..." name="email">
-                        <input class="email" type="password" placeholder="Mot de passe..." name="mdp">
-                        <input class="email" id="date" type="date" value="Date de Naissance..." name="creation">
+                        <input class="email" type="password" placeholder="Mot de passe..." name="password">
+                        <input class="email" id="date" type="date" value="Date de Naissance..." name="date">
                         <input class="prenom" style="margin-top: 20px;" type="tel" placeholder="Tel..." name="tel">
                        
                         <div class="custom-select" >

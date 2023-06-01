@@ -4,22 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Profil</title>
 </head>
 <body>
     <header> 
-        <nav class="navbar">
-            <ul>
-                <div></div>
-                <li class="border" ><a href=#>FEMME</a></li>
-                <li class="border" ><a href=#>HOMME</a></li>
-                <li class="titre">VEPRI</li>
-                <li class="logo">\V</li> 
-                <li class="border"><a href="#">Panier</a></li>
-                <li class="border"><a href=#>Connexion</a></li>
-            </ul>
-        </nav>
+        <<?php include_once('navbar.php');?>
     </header>
     <hr>
 
@@ -33,17 +23,17 @@
                 <h3 style="padding:20px 0px">MES PRODUITS</h3>
                 <div class="produits-container">
                     <div class="produit">
-                        <img  class="produit-image" src="https://cutt.ly/z8Dp2p9" alt="Produit 1">
+                        <img  class="produit-image" src="https://tinyurl.com/32htxj6p" alt="Produit 1">
                         <h4>Nom du produit 1</h4>
                         <p>Prix de vente : 10€</p>
                     </div>
                     <div class="produit">
-                        <img  class="produit-image"src="https://vu.fr/VvuM" alt="Produit 2">
+                        <img  class="produit-image"src="https://tinyurl.com/32htxj6p" alt="Produit 2">
                         <h4>Nom du produit 2</h4>
                         <p>Prix de vente : 15€</p>
                     </div>
                     <div class="produit">
-                        <img  class="produit-image" src="https://vu.fr/AKTd" alt="Produit 3">
+                        <img  class="produit-image" src="https://tinyurl.com/32htxj6p" alt="Produit 3">
                         <h4>Nom du produit 3</h4>
                         <p>Prix de vente : 20€</p>
                     </div>
