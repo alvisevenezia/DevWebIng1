@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/panier.js"></script>
     <link rel="stylesheet" href="css/Style.css">
     <title>Profil</title>
     <style>
@@ -72,7 +73,7 @@
                     <button class="size-button">L</button>
                 </div>
                 <div class="add-to-cart">
-                    <button id="addToCartButton">Ajouter au Panier</button>
+                    <button id="addToCartButton" onclick="addBasket({'id':'<?php echo $data['idproduit']?>','name':'<?php echo $data['nom']?>','price':'<?php echo $data['prix']?>','img':'<?php echo $data['photo']?>'},1)">Ajouter au Panier</button>
                 </div>
                 <div class="product-description">
                     <button onclick="toggleContent('description')">Description</button>

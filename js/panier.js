@@ -98,7 +98,9 @@ function panier() {
 
             `<div class="between_flex ligne_panier"><div class="center_align flex">
         <div id="blocimage">
-            <img src="${article.img}" alt="image" />
+                <?php
+                    echo "<img src='./assets/img/".$data["photo"]."'.>";
+                ?>
                 </div>
             <div id="blocProduit">
 

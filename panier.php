@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-    <?php include_once('navbar.php');?>s
+    <?php include_once('navbar.php');?>
     </header>
     <hr>
     <section>
@@ -58,7 +58,7 @@
                     </a>
                     <!-- le bouton continuer pour obtenir notre ticket et changer les stocks s'affichent -->
                     <?php } else { ?>
-                    <a href="login.php" class="button_recap" style="background-color:rgb(255, 91, 91)"> CONNECTEZ-VOUS POUR COMMANDER</a>
+                    <a href="connexion.php" class="button_recap" style="background-color:rgb(255, 91, 91)"> CONNECTEZ-VOUS POUR COMMANDER</a>
                     <!-- sinon affiche un lien pour se connecter necessaire a la poursuite des achats -->
                     <?php } ?> </br><br>
                     <button class="button_back_recap" onclick="window.history.back()">CONTINUER MES ACHATS</button>
