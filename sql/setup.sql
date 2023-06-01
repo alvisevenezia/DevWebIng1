@@ -1,3 +1,12 @@
+DROP TABLE IF exists adminmarketplace;
+DROP TABLE IF exists livreur;
+DROP TABLE IF exists panier;
+DROP TABLE IF exists produit;
+DROP TABLE IF exists vendeur;
+DROP TABLE IF exists client;
+DROP TABLE IF exists personne;
+DROP TABLE IF exists login;
+
 CREATE TABLE `projetweb`.`personne` (
   `idPersonne` INT NOT NULL AUTO_INCREMENT,
   `prenom` VARCHAR(45) NOT NULL,
@@ -12,16 +21,13 @@ CREATE TABLE `projetweb`.`personne` (
 
 CREATE TABLE `projetweb`.`client` (
   `idClient` INT NOT NULL AUTO_INCREMENT,
-  `idSession` INT NOT NULL,
   `dateInscription` DATE NOT NULL,
   `dateConnection` DATE NOT NULL,
-  `idPanier` INT NOT NULL,
   `idPersonne` INT NOT NULL,
+  `idLogin` VARCHAR(45) NOT NULL UNIQUE, 
   PRIMARY KEY (`idClient`),
-  UNIQUE INDEX `idSession_UNIQUE` (`idSession` ASC) VISIBLE,
-  UNIQUE INDEX `idPanier_UNIQUE` (`idPanier` ASC) VISIBLE,
   UNIQUE INDEX `idPersonne_UNIQUE` (`idPersonne` ASC) VISIBLE);
-  
+
   CREATE TABLE `projetweb`.`vendeur` (
   `idVendeur` INT NOT NULL AUTO_INCREMENT,
   `dateInscription` DATE NOT NULL,
@@ -32,6 +38,8 @@ CREATE TABLE `projetweb`.`client` (
   `siret` INT NOT NULL,
   `telephone` INT NOT NULL, 
   `pays` VARCHAR(45) NOT NULL,
+  `idLogin` VARCHAR(45) NOT NULL UNIQUE,
+  `dureeContrat` INT NOT NULL,
   PRIMARY KEY (`idVendeur`),
   UNIQUE INDEX `idPersonne_UNIQUE` (`idPersonne` ASC) VISIBLE);
   
@@ -43,7 +51,7 @@ CREATE TABLE `projetweb`.`client` (
   `poid` INT NOT NULL,
   `idVendeur` INT NOT NULL,
   `marque` VARCHAR(45) NOT NULL,
-  `type` INT NOT NULL,
+  `type` VARCHAR(45) NOT NULL,
   `taille` INT NOT NULL,
   `desciption` VARCHAR(45),
   `photo` VARCHAR(45) NOT NULL,

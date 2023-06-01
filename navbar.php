@@ -19,7 +19,13 @@
 
         if(isset($_SESSION['logged']) && $_SESSION["logged"] == "true"){
             echo "<li class='border'><a href='./php/deconnexion.php'>Deconnexion</a></li>";
-            echo "<li class='border'><a href='./profil.php'>Profil</a></li>";
+
+            if($_SESSION["client"] == "true"){
+                echo "<li class='border'><a href='./profil.php'>Profil</a></li>";
+            }else if($_SESSION["client"] == "false"){
+                echo "<li class='border'><a href='./profil_vendeur.php'>Profil</a></li>";
+            }
+            
             }
             else{
             echo "<li class='border'><a href='./connexion.php'>Connexion</a></li>";
