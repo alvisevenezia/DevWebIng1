@@ -73,7 +73,7 @@
                     <button class="size-button">L</button>
                 </div>
                 <div class="add-to-cart">
-                    <button id="addToCartButton" onclick="addBasket({'id':'<?php echo $data['idproduit']?>','name':'<?php echo $data['nom']?>','price':'<?php echo $data['prix']?>','img':'<?php echo $data['photo']?>'},1)">Ajouter au Panier</button>
+                    <button id="addToCartButton" onclick="">Ajouter au Panier</button>
                 </div>
                 <div class="product-description">
                     <button onclick="toggleContent('description')">Description</button>
@@ -132,6 +132,8 @@
                     var popupDiv = document.getElementById('popup');
                     popupDiv.innerHTML = popupContent;
                     popupDiv.style.display = 'block';
+
+                    addBasket({'id':'<?php echo $data['idproduit']?>','name':'<?php echo $data['nom']?>','price':'<?php echo $data['prix']?>','img':'<?php echo $data['photo']?>'},1);
 
                     setTimeout(function() {
                         popupDiv.innerHTML = '';
