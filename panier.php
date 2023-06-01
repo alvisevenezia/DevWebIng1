@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php require "./php/sessionutils.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-    <?php include_once('navbar.php');?>
+    <?php include_once('navbar.php');?>s
     </header>
     <hr>
     <section>

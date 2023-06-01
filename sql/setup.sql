@@ -31,7 +31,6 @@ CREATE TABLE `projetweb`.`client` (
   CREATE TABLE `projetweb`.`vendeur` (
   `idVendeur` INT NOT NULL AUTO_INCREMENT,
   `dateInscription` DATE NOT NULL,
-  `idPersonne` INT NOT NULL,
   `chiffreAffaire` INT NOT NULL,
   `comission` INT NOT NULL, 
   `nomSociete` VARCHAR(45) NOT NULL,
@@ -40,8 +39,7 @@ CREATE TABLE `projetweb`.`client` (
   `pays` VARCHAR(45) NOT NULL,
   `idLogin` VARCHAR(45) NOT NULL UNIQUE,
   `dureeContrat` INT NOT NULL,
-  PRIMARY KEY (`idVendeur`),
-  UNIQUE INDEX `idPersonne_UNIQUE` (`idPersonne` ASC) VISIBLE);
+  PRIMARY KEY (`idVendeur`));
   
   CREATE TABLE `projetweb`.`produit` (
   `idproduit` INT NOT NULL AUTO_INCREMENT,

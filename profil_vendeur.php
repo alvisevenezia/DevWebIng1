@@ -1,3 +1,5 @@
+<?php require "./php/sessionutils.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,28 +91,30 @@
         <div class="identité">
             <hr>
             <h3 style="padding:20px 0px">INFORMATIONS PERSONNELLES </h3>
-
-            <div class="container">
-                <div class="left-container">
-                    <h4>Prénom</h4>
-                    <input class="prenom" type="text" placeholder="Prénom..." name="prenom" required>
+            <form action="./php/changeInfo.php" method="post">
+                <div class="container">
+                    <div class="left-container">
+                        <h4>Nom société</h4>
+                        <input class="prenom" type="text" placeholder="Nom société" name="nom">
+                    </div>
+                    <div class="right-container">
+                        <h4>Siret</h4>
+                        <input class="nom" type="text" placeholder="Siret" name="siret">
+                    </div>
                 </div>
-                <div class="right-container">
-                    <h4>Nom</h4>
-                    <input class="nom" type="text" placeholder="Nom..." name="nom" required>
+                <div class="container">
+                    <div class="left-container">
+                        <h5>Email</h5>
+                        <input class="email" type="text" placeholder="E-mail..." name="email">
+                    </div>
+                    <div class="right-container">
+                        <h5>Date de Création</h5>
+                        <input class="email" id="date" type="date" value="Date de Création" name="date">
+                    </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="left-container">
-                    <h5>Email</h5>
-                    <input class="email" type="text" placeholder="E-mail..." name="email" required>
-                </div>
-                <div class="right-container">
-                    <h5>Date de naissance</h5>
-                    <input class="email" id="date" type="date" value="Date de Naissance..." name="date" required>
-                </div>
-            </div>
-            <button class="valider2" type="submit">MODIFIER MES INFORMATIONS</button>
+                <button class="valider2" type="submit">MODIFIER MES INFORMATIONS</button>
+            </form>
+            
         </div>
         
        
