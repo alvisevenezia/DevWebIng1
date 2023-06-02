@@ -37,5 +37,14 @@ INSERT INTO produit(idProduit,type,stock,prix,poid,idVendeur,marque,nom,taille,d
 INSERT INTO produit(idProduit,type,stock,prix,poid,idVendeur,marque,nom,taille,description,photo) VALUES (17,'socks',10,20,200,1,'nike','socks-blanc',40,'socks de couleur blanc nike','socks-blanc-nike.jpg');
 INSERT INTO produit(idProduit,type,stock,prix,poid,idVendeur,marque,nom,taille,description,photo) VALUES (18,'socks',10,20,200,1,'carhartt','socks-rouge',40,'socks de couleur rouge carhartt','socks-rouge-carhartt.jpg');
 
+INSERT INTO livreur (nom, prenom, email, mot_de_passe, permis)
+VALUES 
+  ('JAN', 'Sara', 'sarajan@gmail.com', 'test2023', 'B'),
+  ('TERCHANI', 'Loucas', 'loucasterchani@gmail.com', 'test2023', 'C');
 
+INSERT INTO colis (id, idLivreur, taille, poids, adresse, date_de_livraison, statut)
+VALUES ('12345AVGTF', 1, 'Petit', '1 kg', '22 avenue des lilas', '06-06-23', 'En-cours'),
+       ('45678KLOHP', 1, 'Moyen', '2 kg', '56 rue de la mort', curdate(), 'Arrive');
+
+  
 

@@ -119,5 +119,12 @@
         
        
     </div>
+
+    <script>
+        function toggleContent(content) {
+            var contentElement = document.querySelector('.product-' + content + '-content');
+            contentElement.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>

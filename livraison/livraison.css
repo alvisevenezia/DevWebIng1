@@ -114,6 +114,8 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
+
+
 #tracking form input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -121,6 +123,8 @@ nav ul li a:hover {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
+
 
 #tracking form input[type="submit"] {
     background-color: #333;
@@ -134,40 +138,6 @@ nav ul li a:hover {
     background-color: #555;
 }
 
-/* Services */
-#services {
-    padding: 40px;
-    text-align: center;
-}
-
-#services h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
-}
-
-.service {
-    display: inline-block;
-    vertical-align: top;
-    width: 33.33%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.service img {
-    max-width: 100px;
-    margin-bottom: 20px;
-}
-
-.service h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.service p {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #777;
-}
 
 /* Contact */
 #contact {
@@ -234,7 +204,6 @@ footer p {
     font-size: 14px;
 }
 
-
 /* Connexion */
 #login {
     background-color: #d2b490;
@@ -286,7 +255,6 @@ footer p {
 #profile {
     background-color: #d2b490 ;
     padding: 40px;
-    text-align: center;
     width: 500px;
     margin: 20px auto;
     border-radius: 5%;
@@ -309,4 +277,55 @@ footer p {
 .profile-info p {
     margin-bottom: 10px;
     border-radius: 5%;
+}
+
+#profile form {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#profile form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#profile form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+#profile ul {
+    text-align: left;
+    padding-left: 0;
+  }
+  
+  #profile li {
+    list-style-type: none;
+    margin-bottom: 10px;
+  }
+
+/* Bouton de déconnexion */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+
+.status-message {
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
 }

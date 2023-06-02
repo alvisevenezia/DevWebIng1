@@ -138,7 +138,7 @@
                     setTimeout(function() {
                         popupDiv.innerHTML = '';
                         popupDiv.style.display = 'none';
-                    }, 3000);
+                    }, 500);
                 } else {
                     alert("Veuillez choisir la taille du produit.");
                 }

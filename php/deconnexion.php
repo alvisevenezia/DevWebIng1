@@ -1,9 +1,13 @@
 <?php
-
 require "sessionutils.php";
 
 $_SESSION["logged"] = "false";
-
-header('Location: ../index.php');
-
 ?>
+
+<script> localStorage.removeItem("basket")</script>
+
+<?php
+
+header("Location: ../index.php");
+?>
+

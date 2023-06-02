@@ -15,8 +15,6 @@ function getBasket() {
     }
 }
 
-
-
 //fonction pour ajouter au panier le produit et sa quantité
 function addBasket(product, quantity) {
     let basket = getBasket();
@@ -97,9 +95,9 @@ function panier() {
         stringhtml += // notre variable prend l'ecriture de ci-dessous pour chaque produits du panier
 
             `<div class="between_flex ligne_panier"><div class="center_align flex">
-                <div id="blocimage">
-                 "<img src='./assets/img/<?php echo $data["photo"] ?>'.>";
-                
+        <div id="blocimage">
+            <img src="${article.img}" alt="image" />
+                </div>
             <div id="blocProduit">
 
          <p >${article.name}</p>

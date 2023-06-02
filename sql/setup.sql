@@ -6,6 +6,9 @@ DROP TABLE IF exists vendeur;
 DROP TABLE IF exists client;
 DROP TABLE IF exists personne;
 DROP TABLE IF exists login;
+DROP TABLE IF EXISTS livreur;
+DROP TABLE IF EXISTS colis;
+DROP TABLE IF EXISTS commandes;
 
 CREATE TABLE `projetweb`.`personne` (
   `idPersonne` INT NOT NULL AUTO_INCREMENT,
@@ -62,14 +65,6 @@ CREATE TABLE `projetweb`.`panier` (
   PRIMARY KEY (`idpanier`),
   UNIQUE INDEX `idListeProduit_UNIQUE` (`idListeProduit` ASC) VISIBLE);
 
-CREATE TABLE `projetweb`.`livreur` (
-  `idlivreur` INT NOT NULL,
-  `idLivraison` VARCHAR(45) NOT NULL,
-  `idPersonne` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idlivreur`),
-  UNIQUE INDEX `idLivraison_UNIQUE` (`idLivraison` ASC) VISIBLE,
-  UNIQUE INDEX `idPersonne_UNIQUE` (`idPersonne` ASC) VISIBLE);
-
 CREATE TABLE `projetweb`.`adminmarketplace` (
   `idadminMarketPlace` INT NOT NULL AUTO_INCREMENT,
   `idPersonne` INT NOT NULL,
@@ -77,11 +72,35 @@ CREATE TABLE `projetweb`.`adminmarketplace` (
   UNIQUE INDEX `idadminMarketPlace_UNIQUE` (`idadminMarketPlace` ASC) VISIBLE,
   UNIQUE INDEX `idPersonne_UNIQUE` (`idPersonne` ASC) VISIBLE);
   
-  CREATE TABLE `projetweb`.`login` (
-  `idlogin` VARCHAR(45) NOT NULL,
-  `mdp` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idlogin`),
-  UNIQUE INDEX `idlogin_UNIQUE` (`idlogin` ASC) VISIBLE);
+CREATE TABLE `projetweb`.`login` (
+`idlogin` VARCHAR(45) NOT NULL,
+`mdp` VARCHAR(45) NOT NULL,
+PRIMARY KEY (`idlogin`),
+UNIQUE INDEX `idlogin_UNIQUE` (`idlogin` ASC) VISIBLE);
 
+CREATE TABLE `projetweb`.`commandes` (
+  `idCommande` INT NOT NULL,
+  `idClient` INT NOT NULL
+);
+
+CREATE TABLE `projetweb`.livreur (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nom VARCHAR(50) NOT NULL,
+  prenom VARCHAR(50) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  mot_de_passe VARCHAR(100) NOT NULL,
+  permis VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE `projetweb`.colis (
+  id VARCHAR(10) PRIMARY KEY,
+  idLivreur INT NOT NULL,
+  taille VARCHAR(100) NOT NULL,
+  poids VARCHAR(100) NOT NULL,
+  adresse VARCHAR(100) NOT NULL,
+  date_de_livraison VARCHAR(100) NOT NULL,
+  statut VARCHAR(100) NOT NULL,
+  FOREIGN KEY (idLivreur) REFERENCES livreur(id)
+);
 
 

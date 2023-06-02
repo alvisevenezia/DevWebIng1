@@ -1,3 +1,11 @@
+<?php
+    require "./php/sessionutils.php";
+
+    $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
+    $result = $mysqli->query("SELECT * FROM commande WHERE idCLient = ".$_SESSION['idLogin']."");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +27,30 @@
                 <h2 style="padding:20px 0px;">NOM PRENOM</h2>
               <hr>
                 <h3 style="padding:20px 0px 20px 0px;">SUIVI DE COMMANDES</h3>
-                <button class="valider2" type="submit" >VOIR MES COMMANDES</button>
+                <button class="valider2" onclick="toggleContent('commande-list')">VOIR MES COMMANDES</button>
+                    <div class="commande-list">
+                        <?php
+
+                            if($result == false ||$result->num_rows == 0){
+                                echo "<p>Vous n'avez pas encore passé de commande</p>";
+                            }else{
+
+                                //loop throw all the commands in $data
+                                while($data = $result->fetch_assoc()){
+                                    echo "<div class='commande'>";
+                                    echo "<h4>Commande n°".$data['idCommande']."</h4>";
+                                    echo "<p>Produit : ".$data['idProduit']."</p>";
+                                    echo "<p>Quantité : ".$data['quantite']."</p>";
+                                    echo "<p>Prix : ".$data['prix']."</p>";
+                                    echo "<p>Date : ".$data['date']."</p>";
+                                    echo "</div>";
+                                    $data = $result->fetch_assoc();
+                                }
+                            }
+                                
+
+                        ?>
+                    </div>
             </div>
 
 
@@ -57,6 +88,12 @@
     </div>
     
 
+    <script>
+        function toggleContent(content) {
+            var contentElement = document.querySelector(content);
+            contentElement.classList.toggle('show');
+        }
+    </script>
 
 
 </body>
