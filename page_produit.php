@@ -137,7 +137,8 @@
                     addBasket({'id':'<?php echo $data['idproduit']?>',
                         'name':'<?php echo $data['nom']?>',
                         'price':'<?php echo $data['prix']?>',
-                        'taille': productInfo.size,'img':'<?php echo $data['photo']?>',
+                        'taille': productInfo.size,
+                        'img':'<?php echo $data['photo']?>',
                         'vendeur':'<?php echo $data['idVendeur']?>
                         '},1);
 
