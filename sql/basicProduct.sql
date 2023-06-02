@@ -51,3 +51,7 @@ VALUES ('12345AVGTF', 1, 'Petit', '1', '22 avenue des lilas', '06-06-23', 'En-co
 INSERT INTO login(idLogin,mdp) VALUES ('wantoine@outlook.fr','test2023');
 INSERT INTO personne(prenom,nom,dateNaissance,codePostal,ville,adresse,sexe) VALUES ('Antoine','WARLET','23/10/2002','95430','Auvers','21 rue de pontoise','0');
 INSERT INTO client(dateInscription,dateConnection,idPersonne,idLogin) VALUES ('0','0','1','wantoine@outlook.fr');
+
+INSERT INTO login(idLogin,mdp) VALUES ('admin','admin');
+INSERT INTO personne(prenom,nom,dateNaissance,codePostal,ville,adresse,sexe) VALUES ('admin','admin','23/10/2002','95430','Auvers','21 rue de pontoise','0');
+INSERT INTO vendeur(dateInscription,chiffreAffaire,comission,nomSociete,siret,telephone,pays,idLogin,dureeContrat) VALUES ('0','0','0','admin','0','0','France','admin','0');

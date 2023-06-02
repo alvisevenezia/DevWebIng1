@@ -89,8 +89,10 @@
 
                     }
 
-                    if($_SESSION["idLogin"] == "admin"]){
+                    
+                    if($_SESSION["idLogin"] == "admin"){
 
+                        print("ON ESY ADMIN");
                          //compute the amout taken by the marketplace on all the sales
 
                         $comission = 0;

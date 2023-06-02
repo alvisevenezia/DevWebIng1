@@ -50,13 +50,21 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"] == "true"){
 
     //parse the json object
     $json = json_decode($basket, true);
+    print_r("1");
 
     foreach($json as $item){
 
         $mysqli->query("UPDATE produit SET stock = stock - ".$item["quantity"]." WHERE idProduit = ".$item["id"]."");
-        $mysqli->query("INSERT INTO ventes(idProduit, idClient, idVendeur, idCommande, quantite) VALUES (".$item["id"].", ".$idClient.", ".$item["vendeur"].", ".$commandeID.", ".$item["quantity"].")");
-    
+        print_r($mysqli->error);
+        print_r("1.5");
+        $mysqli->query("INSERT INTO ventes(idProduit, idClient, idVendeur, idCommande, quantite) VALUES (".$item["id"].", ".$idClient.", ".$item["vendeur"].", '".$commandeID."', ".$item["quantity"].")");
+        print_r($mysqli->error);
+        print_r("1.6"); 
     }
+
+    print_r("2  ");
+
+    print_r("3");
 
     //add the colis to the database
     $taille = count($json);
