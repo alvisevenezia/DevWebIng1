@@ -64,6 +64,7 @@
                     <?php
                         echo $data['prix'].' €';
                     ?>
+                    €
                 </h2>
                 <div class="product-size">
                     <label>Taille:</label>
@@ -133,7 +134,12 @@
                     popupDiv.innerHTML = popupContent;
                     popupDiv.style.display = 'block';
 
-                    addBasket({'id':'<?php echo $data['idproduit']?>','name':'<?php echo $data['nom']?>','price':'<?php echo $data['prix']?>','taille': productInfo.size,'img':'<?php echo $data['photo']?>'},1);
+                    addBasket({'id':'<?php echo $data['idproduit']?>',
+                        'name':'<?php echo $data['nom']?>',
+                        'price':'<?php echo $data['prix']?>',
+                        'taille': productInfo.size,'img':'<?php echo $data['photo']?>',
+                        'vendeur':'<?php echo $data['idVendeur']?>
+                        '},1);
 
                     setTimeout(function() {
                         popupDiv.innerHTML = '';

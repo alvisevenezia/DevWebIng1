@@ -66,7 +66,7 @@ $sexe=$_GET['sexe'];
 
             while($row = $result->fetch_assoc()){
                 echo("<div class='wrapper'>");
-                echo("<a href=''>");
+                echo("<a href='page_produit.php?filtre=idproduit&value=".$row["idproduit"]."'>");
                 echo("<img src='./assets/img/".$row["photo"]."'>");
                 echo("</a>");
                 echo("<div class='product-price'>");

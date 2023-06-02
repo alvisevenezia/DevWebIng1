@@ -2,8 +2,9 @@
     require "./php/sessionutils.php";
 
     $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
-    $result = $mysqli->query("SELECT * FROM commande WHERE idCLient = ".$_SESSION['idLogin']."");
-
+    $res = $mysqli->query("SELECT idClient FROM client WHERE idLogin = '".$_SESSION["idLogin"]."'");
+    $idClient = $res->fetch_assoc()["idClient"];
+    $result = $mysqli->query("SELECT * FROM commandes WHERE idClient = ".$idClient."");
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+  <link href="css/style.css" type="text/css" title="Mon design 1" rel="stylesheet">
     <title>Profil</title>
 </head>
 <body>
@@ -35,16 +36,30 @@
                                 echo "<p>Vous n'avez pas encore passé de commande</p>";
                             }else{
 
-                                //loop throw all the commands in $data
-                                while($data = $result->fetch_assoc()){
+                                //loop through all the rows returned by the query
+                                while($row = $result->fetch_assoc()){
                                     echo "<div class='commande'>";
-                                    echo "<h4>Commande n°".$data['idCommande']."</h4>";
-                                    echo "<p>Produit : ".$data['idProduit']."</p>";
-                                    echo "<p>Quantité : ".$data['quantite']."</p>";
-                                    echo "<p>Prix : ".$data['prix']."</p>";
-                                    echo "<p>Date : ".$data['date']."</p>";
+                                    echo "<p>Commande n°".$row["idCommande"]."</p>";
+                                    
+                                    //open file containing the order details
+                                    $file = fopen("./commandes/".$row["idCommande"].".json", "r");
+
+                                    //parse the json file
+                                    $json = json_decode(fread($file, filesize("./commandes/".$row["idCommande"].".json")), true);
+
+                                    //loop through all the items in the order
+                                    foreach($json as $item){
+                                        echo "<div class='flex-center' >";
+                                        echo "<img src='./assets/img/".$item["img"]."' alt='image' width='100px' height='100px'>";
+                                        echo "<p>".$item["name"]."</p>";
+                                        echo "<p>".$item["price"]."€</p>";
+                                        echo "<p>Quantité : ".$item["quantity"]."</p>";
+                                        echo "</div>";
+                                        echo "<hr>";
+                                    }
+
+                                    echo "<br>";
                                     echo "</div>";
-                                    $data = $result->fetch_assoc();
                                 }
                             }
                                 
