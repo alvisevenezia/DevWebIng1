@@ -58,20 +58,7 @@ CREATE TABLE `projetweb`.`client` (
   `photo` VARCHAR(45),
   UNIQUE INDEX `idproduit_UNIQUE` (`idproduit` ASC) VISIBLE,
   PRIMARY KEY (`idproduit`));
-
-CREATE TABLE `projetweb`.`panier` (
-  `idpanier` INT NOT NULL AUTO_INCREMENT,
-  `idListeProduit` INT NOT NULL,
-  PRIMARY KEY (`idpanier`),
-  UNIQUE INDEX `idListeProduit_UNIQUE` (`idListeProduit` ASC) VISIBLE);
-
-CREATE TABLE `projetweb`.`adminmarketplace` (
-  `idadminMarketPlace` INT NOT NULL AUTO_INCREMENT,
-  `idPersonne` INT NOT NULL,
-  PRIMARY KEY (`idadminMarketPlace`),
-  UNIQUE INDEX `idadminMarketPlace_UNIQUE` (`idadminMarketPlace` ASC) VISIBLE,
-  UNIQUE INDEX `idPersonne_UNIQUE` (`idPersonne` ASC) VISIBLE);
-  
+ 
 CREATE TABLE `projetweb`.`login` (
 `idlogin` VARCHAR(45) NOT NULL,
 `mdp` VARCHAR(45) NOT NULL,
@@ -79,7 +66,7 @@ PRIMARY KEY (`idlogin`),
 UNIQUE INDEX `idlogin_UNIQUE` (`idlogin` ASC) VISIBLE);
 
 CREATE TABLE `projetweb`.`commandes` (
-  `idCommande` INT NOT NULL,
+  `idCommande` VARCHAR(45) NOT NULL,
   `idClient` INT NOT NULL
 );
 
@@ -100,6 +87,9 @@ CREATE TABLE `projetweb`.colis (
   adresse VARCHAR(100) NOT NULL,
   date_de_livraison VARCHAR(100) NOT NULL,
   statut VARCHAR(100) NOT NULL,
+  x INT,
+  y INT,
+  ordre INT,
   FOREIGN KEY (idLivreur) REFERENCES livreur(id)
 );
 
@@ -111,7 +101,7 @@ CREATE TABLE `projetweb`.ventes(
   idClient INT NOT NULL,
   idVendeur INT NOT NULL,
   quantite INT NOT NULL,
-  idCommande INT NOT NULL
+  idCommande VARCHAR(45) NOT NULL
 );
 
 

@@ -11,7 +11,7 @@
             else{
             echo"class='border'"; }
             ?>><a href="index.php?sexe=homme">HOMME</a></li>
-
+        <li> <a href="./livraison/index.php">COLIS<a></li>
         <li class="titre">VEPRI</li>
         <li class="logo">\V</li>
         <li class="border"><a href="panier.php">Panier</a></li>

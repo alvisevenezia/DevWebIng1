@@ -79,15 +79,18 @@ if (isset($_POST['logout'])) {
             $idLivreur = $_SESSION['idLivreur'];
 
             // Récupérer les colis affectés au livreur connecté
-            $query = "SELECT * FROM colis WHERE idLivreur = $idLivreur";
+            $query = "SELECT * FROM colis ORDER BY ordre ASC";
             $result = $conn->query($query);
-
             if ($result->num_rows > 0) {
                 echo '<ul>';
                 while ($colis = $result->fetch_assoc()) {
+
+                    if($colis['idLivreur'] != $idLivreur) continue; // Si le colis n'est pas affecté au livreur connecté, passer au colis suivant
+
                     echo '<li>';
                     echo '<strong>ID :</strong> ' . $colis['id'] . '<br>';
-                    echo '<strong>Adresse :</strong> ' . $colis['adresse'];
+                    echo '<strong>Adresse :</strong> ' . $colis['adresse'] . '<br>';;
+                    echo '<strong>Ordre :</strong> ' . $colis['ordre'] . '<br>';
                     echo '</li>';
                 }
                 echo '</ul>';

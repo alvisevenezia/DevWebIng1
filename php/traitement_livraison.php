@@ -5,9 +5,27 @@
 
 require "sessionutils.php";
 
+
+function genererNumeroCommande() {
+    $caracteres = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Chiffres et lettres possibles pour le numéro de commande
+    $longueur = 10; // Longueur du numéro de commande
+
+    $numeroCommande = '';
+
+    // Générer le numéro de commande en choisissant aléatoirement les caractères
+    for ($i = 0; $i < $longueur; $i++) {
+        $indexAleatoire = mt_rand(0, strlen($caracteres) - 1);
+        $caractereAleatoire = $caracteres[$indexAleatoire];
+        $numeroCommande .= $caractereAleatoire;
+    }
+
+    return $numeroCommande;
+
+}   
+
 if(isset($_SESSION["logged"]) && $_SESSION["logged"] == "true"){
 
-    $commandeID = rand(0, 999999);
+    $commandeID = genererNumeroCommande();
 
     //check if this commadn id already exist in bdb
     $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
@@ -31,19 +49,43 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"] == "true"){
     fclose($file);
 
     //parse the json object
-
     $json = json_decode($basket, true);
-
-    print(sizeof($json));
 
     foreach($json as $item){
 
         $mysqli->query("UPDATE produit SET stock = stock - ".$item["quantity"]." WHERE idProduit = ".$item["id"]."");
         $mysqli->query("INSERT INTO ventes(idProduit, idClient, idVendeur, idCommande, quantite) VALUES (".$item["id"].", ".$idClient.", ".$item["vendeur"].", ".$commandeID.", ".$item["quantity"].")");
-        echo $mysqli->error;
     
     }
 
+    //add the colis to the database
+    $taille = count($json);
+
+    //set if taille is petit, moyen or grand
+    if($taille < 1){
+        $taille = "petit";
+
+    }else if($taille < 5){
+        $taille = "moyen";
+
+    }else{
+        $taille = "grand";
+    }
+
+    //compute the total weight of the order
+    $poids = 0;
+
+    foreach($json as $item){
+        $poids += $item["quantity"]*$mysqli->query("SELECT poid FROM produit WHERE idProduit = ".$item["id"]."")->fetch_assoc()["poid"];
+    }
+
+    $poids = $poids/1000;
+
+    //set the date of delivery to 3 days after the order
+    $date = date('Y-m-d', strtotime("+3 days"));
+
+    $mysqli->query("INSERT INTO colis (id, idLivreur,taille ,poids,adresse,date_de_livraison,statut) VALUES ('$commandeID', 0, '$taille', $poids, '".$_POST["adresse"]."', $date, 'en attente')");
+    print_r($mysqli->error);
 
     echo $commandeID;   
 }

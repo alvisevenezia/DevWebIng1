@@ -94,8 +94,6 @@
                                             
                                             //clear basket and reload page
                                             localStorage.clear();
-
-                                            console.log(this.responseText);
                                         }
                                     }
 
