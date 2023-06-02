@@ -89,38 +89,11 @@
 
                     }
 
-                    if($_SESSION["idLogin"] == "admin"]){
-
-                         //compute the amout taken by the marketplace on all the sales
-
-                        $comission = 0;
-
-                        //get all sales
-                        $res = $mysqli->query("SELECT * FROM ventes");
-
-                        //loop through all the rows returned by the query and compute the total amount taken by the marketplace
-                        while($row = $res->fetch_assoc()){
-                            $data = $mysqli->query("SELECT * FROM produit WHERE idProduit = ".$row["idProduit"]."")->fetch_assoc();
-                            $comission += $data["prix"]*$row["quantite"]*($mysqli->query("SELECT comission FROM vendeur WHERE idVendeur = ".$idVendeur."")->fetch_assoc()["comission"])/100;
-                        }
-
-                        echo "<p>Montant total des ventes: ".$total."€</p>";
-                        echo "<p>Montant total de la commission : ".$comission."€</p>";
-                        echo "<p>Montant total : ".($total+$comission)."€</p>";
-
-
-                    }else{
-
-                        $total = $total*(1-($mysqli->query("SELECT comission FROM vendeur WHERE idVendeur = ".$idVendeur."")->fetch_assoc()["comission"])/100);
-                   
                     //print total amount and ivide it by the comission 
 
                     echo "<p> Montant total : ".$total."€</p>";
-                    echo "<p>Montant reçu apres commission : ".$total*(1-($mysqli->query("SELECT comission FROM vendeur WHERE idVendeur = ".$idVendeur."")->fetch_assoc()["comission"])/100)."€</p>";
-                    
-                }
-                    echo "</div>";
 
+                   
                 }
 
             ?>
