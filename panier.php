@@ -50,9 +50,8 @@
                 </br>
                 <div style="text-align:center">
                     <!-- si on est connecte -->
-                    <?php if (isset($_SESSION['email']) && (isset($_SESSION['prenom']))) {
-
-                    ?>
+                    <?php if ($_SESSION['logged'] == "true") {
+                                            ?>
                     <a href="#" class="button_recap" style="background-color: #007aab">
                             VALIDER MA COMMANDE
                     </a>

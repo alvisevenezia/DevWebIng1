@@ -97,11 +97,9 @@ function panier() {
         stringhtml += // notre variable prend l'ecriture de ci-dessous pour chaque produits du panier
 
             `<div class="between_flex ligne_panier"><div class="center_align flex">
-        <div id="blocimage">
-                <?php
-                    echo "<img src='./assets/img/".$data["photo"]."'.>";
-                ?>
-                </div>
+                <div id="blocimage">
+                 "<img src='./assets/img/<?php echo $data["photo"] ?>'.>";
+                
             <div id="blocProduit">
 
          <p >${article.name}</p>
