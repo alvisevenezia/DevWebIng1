@@ -18,8 +18,7 @@
                 <li class="logo">\V</li>
             </div>
             <div class="flex navdiv">
-                <li> <a href="./livraison/index.php">COLIS<a></li>
-                <li class="border"><a href="panier.php">Panier</a></li>
+                <li class="border"> <a href="./livraison/index.php">COLIS<a></li>
                 <?php
 
         if(isset($_SESSION['logged']) && $_SESSION["logged"] == "true"){
@@ -37,6 +36,7 @@
             echo "<li class='border'><a href='./connexion.php'>Connexion</a></li>";
             }
         ?>
+                <li class="border"><a href="panier.php">Panier</a></li>
             </div>
         </div>
     </ul>

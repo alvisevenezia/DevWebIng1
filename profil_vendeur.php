@@ -89,7 +89,7 @@
 
                     }
 
-                    if($_SESSION["idLogin"] == "admin"]){
+                    if($_SESSION["idLogin"] == "admin"){
 
                          //compute the amout taken by the marketplace on all the sales
 

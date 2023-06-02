@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="js/panier.js"></script>
     <link rel="stylesheet" href="css/Style.css">
-    <title>Profil</title>
+    <title>VEPRI</title>
     <style>
         .popup {
             position: fixed;
@@ -78,7 +78,7 @@
                     <button id="addToCartButton" onclick="">Ajouter au Panier</button>
                 </div>
                 <div class="product-description">
-                    <button onclick="toggleContent('description')">Description</button>
+                    <button onclick="toggleContent('description')">Description ▶</button>
                     <div class="product-description-content">
                         <?php
 
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="product-service">
-                    <button onclick="toggleContent('service')">Service</button>
+                    <button onclick="toggleContent('service')">Service ▶</button>
                     <div class="product-service-content">
                         <p>EXPEDITION EN 24H
                             TOUTE COMMANDE PASSÉE AVANT 13H EST PRÉPARÉE ET EXPÉDIÉE DANS LA JOURNÉE. LES COMMANDES PASSÉES APRÈS 13H SONT TRAITÉES EN PRIORITÉ LE JOUR OUVRÉ SUIVANT.</p>
@@ -100,6 +100,7 @@
                             DANS LES 10 JOURS CALENDAIRES QUI SUIVENT LA DATE D'EXPÉDITION DE VOTRE COLIS, CITADIUM.COM ÉCHANGE OU REMBOURSE UN ARTICLE QUI NE VOUS DONNE PAS ENTIÈRE SATISFACTION.</p>
                     </div>
                 </div>
+                <button class="button_back" onclick="window.history.back()">RETOUR</button>
             </div>
         </div>
 
@@ -140,6 +141,7 @@
                         'price':'<?php echo $data['prix']?>',
                         'taille': productInfo.size,
                         'img':'<?php echo $data['photo']?>',
+                        'stock':'<?php echo $data['stock']?>',
                         'vendeur':'<?php echo $data['idVendeur']?>
                         '},1);
 

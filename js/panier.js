@@ -53,11 +53,16 @@ function removeFromBasket(id) {
 function quantityChange(id, stock, value){
     let basket = getBasket();
     let foundProduct = basket.find(p => p.id == id);
-    alert(foundProduct.quantity);
-    if(foundProduct.quantity+value<=stock || foundProduct.quantity+value>=0){
+    if(foundProduct.quantity+value<=stock){
         foundProduct.quantity=foundProduct.quantity+value;
-        saveBasket();
     }
+    if (foundProduct.quantity <= 0) { // si la quantité descend à zéro ou moins
+        removeFromBasket(foundProduct.id); //supprime le produit du panier
+
+    } else {
+        saveBasket(basket);
+    }
+    window.location.reload();
 }
 
 
@@ -109,9 +114,10 @@ function panier() {
     let stringhtml = ""; // notre variable qui est une string
 
     for (let article of basket) // pour chaque produits du panier
-
+    
 
     {
+        
         stringhtml += // notre variable prend l'ecriture de ci-dessous pour chaque produits du panier
 
             `<div class="between_flex ligne_panier"><div class="center_align flex">
@@ -126,15 +132,14 @@ function panier() {
          <p >${article.price} €</p>
 
             </div></div>
-            <?php $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
-            $res = $mysqli->query("SELECT stock FROM produit WHERE idProduit = ".?> ${article.id} <?php.""); ?>
+            
             <div class="panier_buttons center_align">
             <div> </div>
             <div class="panier_buttons center_align">
             <div>
-              <button class="button_panier"  onclick="changequantity(${article.id},$res,-1)">-</button>
+              <button class="button_panier"  onclick="quantityChange(${article.id},${article.stock},-1)">-</button>
               <span class="produit-quantite" >${article.quantity}</span>
-              <button class="button_panier" onclick="quantityChange(${article.id},$res,1)">+</button>
+              <button class="button_panier" onclick="quantityChange(${article.id},${article.stock},1)">+</button>
             </div>
             <div style="margin-top:5px">TOTAL : ${parseInt(article.quantity) * parseInt(article.price)}€</div>
             </div>
