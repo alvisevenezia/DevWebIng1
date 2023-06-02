@@ -1,4 +1,5 @@
-<?php require('navbar.php'); ?>
+<?php require('navbar.php');
+require "./php/sessionutils.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">

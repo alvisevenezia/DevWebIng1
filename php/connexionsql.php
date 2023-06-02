@@ -13,7 +13,12 @@ $row = $result->fetch_assoc();
 if($row["MDP"] == $password){
 
     $_SESSION["logged"] = "true";
-    $sexe = $mysqli->query("SELECT sexe FROM personne WHERE idLogin = '$login'");
+
+    //get idPersonne on client table
+    $res = $mysqli->query("SELECT idPersonne FROM client WHERE idLogin = '$login'");
+    $idPersonne = $res->fetch_assoc()["idClient"];
+
+    $sexe = $mysqli->query("SELECT sexe FROM personne WHERE idPersonne = '$idPersonne'");
     $res = $mysqli->query("SELECT * FROM vendeur WHERE idLogin = '$login'");
 
 

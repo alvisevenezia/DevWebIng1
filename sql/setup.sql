@@ -103,4 +103,15 @@ CREATE TABLE `projetweb`.colis (
   FOREIGN KEY (idLivreur) REFERENCES livreur(id)
 );
 
+DROP TABLE IF exists ventes;
+
+CREATE TABLE `projetweb`.ventes(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  idProduit INT NOT NULL,
+  idClient INT NOT NULL,
+  idVendeur INT NOT NULL,
+  quantite INT NOT NULL,
+  idCommande INT NOT NULL
+);
+
 

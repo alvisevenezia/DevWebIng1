@@ -1,4 +1,11 @@
-<?php require "./php/sessionutils.php"; ?>
+<?php require "./php/sessionutils.php"; 
+
+    $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
+    $res = $mysqli->query("SELECT idVendeur FROM vendeur WHERE idLogin = '".$_SESSION["idLogin"]."'");
+    $idVendeur = $res->fetch_assoc()["idVendeur"];
+    $result = $mysqli->query("SELECT SUM(quantite) FROM ventes GROUP BY idProduit");
+    print_r($result);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,6 +63,40 @@
         </script>
 
         <div class="historique-produits">
+
+            <?php
+
+                if($result == false ||$result->num_rows == 0){
+                    echo "<p>Vous n'avez pas encore passé de commande</p>";
+                }else{
+
+                    //loop through all the rows returned by the query and display them
+
+                    $data = $result->fetch_array();
+
+                    print_r($data);
+                    print("<br>");
+
+                    foreach($data as $row){
+
+                        print_r($row);
+                        print("<br>");
+
+                        //echo "<div class='commande'>";
+                        //echo "<p>Commande n°".$row["idCommande"]."</p>";
+                        //echo "<p>Nom du produit : ".$row["nom"]."</p>";
+                        //echo "<p>Prix de vente : ".$row["prix"]."€</p>";
+                        //echo "<p>Solde : ".$row["solde"]."€</p>";
+                        //echo "</div>";
+                        //echo "<hr>";
+
+                    }
+
+                }
+
+            ?>
+
+
                 <hr>
                 <h3 style="padding:20px 0px">HISTORIQUE DES PRODUITS VENDUS</h3>
                 <table>

@@ -1,5 +1,6 @@
 <?php 
 
+    require "./php/sessionutils.php";
     $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
     $result = $mysqli->query("SELECT * FROM produit WHERE ".$_GET['filtre']." = ".$_GET['value']."");
     $data = $result->fetch_assoc();
@@ -145,7 +146,7 @@
                     setTimeout(function() {
                         popupDiv.innerHTML = '';
                         popupDiv.style.display = 'none';
-                    }, 1000);
+                    }, 10);
                 } else {
                     alert("Veuillez choisir la taille du produit.");
                 }
