@@ -3,7 +3,6 @@
 }
 .around_flex{
     display: flex;
-    /*border: 1px solid black;*/
     justify-content: space-around;
 }
 
@@ -97,3 +96,11 @@ align-items:center;
     max-height: 200px;
 }
 
+#blocimage{
+    width: 200px;
+    margin-right: 10px;
+}
+
+#blocproduit p{
+    font-weight: bold;
+}

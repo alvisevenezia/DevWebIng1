@@ -63,7 +63,7 @@
                 </h1>
                 <h2 class="product-price">
                     <?php
-                        echo $data['prix'].' €';
+                        echo $data['prix'];
                     ?>
                     €
                 </h2>
@@ -146,7 +146,7 @@
                     setTimeout(function() {
                         popupDiv.innerHTML = '';
                         popupDiv.style.display = 'none';
-                    }, 10);
+                    }, 1000);
                 } else {
                     alert("Veuillez choisir la taille du produit.");
                 }

@@ -47,24 +47,43 @@ function removeFromBasket(id) {
     window.location.reload(); //recharge la page pour afficher le produit supprimer
 }
 
+
+
+
+function quantityChange(id, stock, value){
+    let basket = getBasket();
+    let foundProduct = basket.find(p => p.id == id);
+    alert(foundProduct.quantity);
+    if(foundProduct.quantity+value<=stock || foundProduct.quantity+value>=0){
+        foundProduct.quantity=foundProduct.quantity+value;
+        saveBasket();
+    }
+}
+
+
+
+
 function changequantity(id, quantity) {
     let basket = getBasket();
     let foundProduct = basket.find(p => p.id == id); //cherche le produit
     var i = 0;
-    // console.log(foundProduct);
-    var requestURL = 'donnees/produits.json'; //asigne l'url de la requete au fichier produits json
+    alert(foundProduct);
+    var requestURL = 'panier.php'; //asigne l'url de la requete au fichier produits json
     var request = new XMLHttpRequest(); //créer une nouvelle requette ajax
     request.open('GET', requestURL); //va chercher à l'aide d'une requête ajax les données du json
     request.responseType = 'json'; // la réponse de la requete est au format json
     request.send(); //envoi la requete 
     request.onload = function () { //chare la requete
+        alert("tout se passe");
         var superHeroes = request.response; // la var superhero prend pour valeur l'objet produit.json
         while (superHeroes[i].id != foundProduct.id) { //creer une boucle pour trouver dans la var supheroes le le produit correspondant à l'id
             i = i + 1;
         }
-        // console.log(foundProduct.quantity);
+        alert(foundProduct.quantity);
         var w = foundProduct.quantity + quantity; // calcul avant la quantité de produits qui seront présentes dans le panier
+        alert("pour le mieux");
         if (foundProduct != undefined && (superHeroes[i].stock > w)) { // si le produit est bien dans le panier et qu'il y a bien asser de stock
+            alert("le pb c pas le stock");
             foundProduct.quantity += quantity; //change la quantité pour la quantité donné
             // console.log(foundProduct.quantity);
             console.log(superHeroes[i].stock);
@@ -75,6 +94,7 @@ function changequantity(id, quantity) {
                 saveBasket(basket);
             }
         }
+        alert("il trouve pas le stock en fait (logiq)");
     }
     window.location.reload();
 }
@@ -100,19 +120,21 @@ function panier() {
             
                 </div>
             <div id="blocProduit">
-
+            
          <p >${article.name}</p>
          <p >${article.taille}</p>
          <p >${article.price} €</p>
 
             </div></div>
+            <?php $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
+            $res = $mysqli->query("SELECT stock FROM produit WHERE idProduit = ".?> ${article.id} <?php.""); ?>
             <div class="panier_buttons center_align">
             <div> </div>
             <div class="panier_buttons center_align">
             <div>
-              <button class="button_panier"  onclick="changequantity(${article.id},-1)">-</button>
+              <button class="button_panier"  onclick="changequantity(${article.id},$res,-1)">-</button>
               <span class="produit-quantite" >${article.quantity}</span>
-              <button class="button_panier" onclick="changequantity(${article.id},1)">+</button>
+              <button class="button_panier" onclick="quantityChange(${article.id},$res,1)">+</button>
             </div>
             <div style="margin-top:5px">TOTAL : ${parseInt(article.quantity) * parseInt(article.price)}€</div>
             </div>
@@ -202,56 +224,14 @@ function increment(stock) {
 function decrement() {
     if (clicks <= 1) {
         document.getElementById("clicks").innerHTML = clicks;
-        // si on essaye de baisser la quantite du produit a ajouter en dessou de 1 c est impossible
+        // si on essaye de baisser la quantite du produit a ajouter en dessous de 1 c est impossible
     } else {
         clicks += -1;
-        // console.log(clicks);
-        // sinon baisse clique de 1
+        // sinon baisse de 1
         document.getElementById("clicks").innerHTML = clicks;
     }
 };
 
-
-// function miniondestroy(dat) {
-//     var req = new XMLHttpRequest();
-//     data = JSON.stringify(dat);
-//     console.log(data);
-//     req.open("POST", requestURL);
-//     req.setRequestHeader("Content-Type", "application/json");
-//     req.send(data);
-// }
-
-//fonction qui ne fonctionne pas pour changer les stocks une fois un achat
-function destroystock() {
-
-    let basket = getBasket();
-    var requestURL = 'donnees/produits.json';
-    var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-
-    request.onload = function () {
-        var superHeroes = request.response;
-        //donnee a la variable super heroe l'objet produit.json
-        for (let product of basket) { // pour chaque produit du panier
-            for (var i = 0; i < superHeroes.length; i++) {
-                if (product.id == superHeroes[i].id) {
-                    // console.log(superHeroes[i].stock);
-                    superHeroes[i].stock = superHeroes[i].stock - product.quantity; //change la quantité dans l'objet json 
-                    // console.log(superHeroes[i].stock);
-                    var data = JSON.stringify(superHeroes);
-                    var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "../phpincl/apiConnect.php", !0);
-                    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                    xhr.send(data);
-
-                }
-            }
-
-        }
-    }
-}
 
 
 panier();

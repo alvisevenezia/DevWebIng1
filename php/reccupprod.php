@@ -27,15 +27,15 @@ if ($conn->connect_error) {
 }
 
 // Préparer et exécuter la requête SQL pour insérer le produit dans la base de données
-$sql = "INSERT INTO produit (nom, type, marque, taille, stock, prix, description, photo)
-        VALUES ('$nom', '$type', '$marque', '$taille', '$stock', '$prix', '$description', '$dest')";
+$sql = "INSERT INTO produit (nom, type, taille, stock, prix, description, photo)
+        VALUES ('$nom', '$type', '$taille', '$stock', '$prix', '$description', '$dest')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Le produit a été ajouté avec succès!";
 } else {
     echo "Erreur lors de l'ajout du produit: " . $conn->error;
 }
-*
+
 // Fermer la connexion à la base de données
 $conn->close();
 ?>

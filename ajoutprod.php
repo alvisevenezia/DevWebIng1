@@ -68,6 +68,8 @@
                     <div class="left-container">
                         <h4>Images du produit</h4>
         <input type="file" id="photo" accept="image/*" multiple onchange="previewImages(event)" name="photo" required>
+        <div id="imagePreviewContainer" class="produits-container"></div>
+
         </div>
                 </div>
 
