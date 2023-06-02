@@ -7,7 +7,7 @@ require "sessionutils.php";
 
 if(isset($_SESSION["logged"]) && $_SESSION["logged"] == "true"){
 
-    $commandeID = rand(100000, 9999999999);
+    $commandeID = rand(100000, 99999999);
 
     //check if this commadn id already exist in bdb
     $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
@@ -15,7 +15,7 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"] == "true"){
 
     while($result->num_rows > 0){
 
-        $commandeID = rand(100000, 9999999999);
+        $commandeID = rand(0, 999999999);
         $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
         $result = $mysqli->query("SELECT * FROM commandes WHERE idCommande = '$commandeID'");
     }
@@ -31,6 +31,6 @@ if(isset($_SESSION["logged"]) && $_SESSION["logged"] == "true"){
     fwrite($file, $basket);
     fclose($file);
 
-    echo $commandeID;
+    echo $commandeID;   
 }
 

@@ -46,5 +46,8 @@ INSERT INTO colis (id, idLivreur, taille, poids, adresse, date_de_livraison, sta
 VALUES ('12345AVGTF', 1, 'Petit', '1 kg', '22 avenue des lilas', '06-06-23', 'En-cours'),
        ('45678KLOHP', 1, 'Moyen', '2 kg', '56 rue de la mort', curdate(), 'Arrive');
 
-  
+-- create admin login
 
+INSERT INTO login(idLogin,mdp) VALUES ('wantoine@outlook.fr','test2023');
+INSERT INTO personne(prenom,nom,dateNaissance,codePostal,ville,adresse,sexe) VALUES ('Antoine','WARLET','23/10/2002','95430','Auvers','21 rue de pontoise','0');
+INSERT INTO client(dateInscription,dateConnection,idPersonne,idLogin) VALUES ('0','0','1','wantoine@outlook.fr');
