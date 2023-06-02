@@ -91,3 +91,9 @@ align-items:center;
 .button_back_recap:hover{
     outline:3px solid black;
 }
+
+#blocimage img{
+    max-width: 200px;
+    max-height: 200px;
+}
+

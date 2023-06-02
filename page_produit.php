@@ -62,7 +62,7 @@
                 </h1>
                 <h2 class="product-price">
                     <?php
-                        echo $data['prix'];
+                        echo $data['prix'].' €';
                     ?>
                 </h2>
                 <div class="product-size">
@@ -117,28 +117,28 @@
 
                 if (selectedSize) {
                     var productInfo = {
-                        name: "Nom du produit",
-                        description: "Description du produit",
+                        name: "<?php echo $data['nom'];?>",
+                        prix: "<?php echo $data['prix'].' €';?>",
                         size: selectedSize.innerText
                     };
 
-                    var productImage = "https://tinyurl.com/32htxj6p";
+                    var productImage = "./assets/img/<?php echo $data['photo'];?>";
 
                     var popupContent = '<img src="' + productImage + '" alt="Product Image" />';
                     popupContent += '<h3>' + productInfo.name + '</h3>';
-                    popupContent += '<p>' + productInfo.description + '</p>';
+                    popupContent += '<p>' + productInfo.prix + '</p>';
                     popupContent += '<p>Taille : ' + productInfo.size + '</p>';
 
                     var popupDiv = document.getElementById('popup');
                     popupDiv.innerHTML = popupContent;
                     popupDiv.style.display = 'block';
 
-                    addBasket({'id':'<?php echo $data['idproduit']?>','name':'<?php echo $data['nom']?>','price':'<?php echo $data['prix']?>','img':'<?php echo $data['photo']?>'},1);
+                    addBasket({'id':'<?php echo $data['idproduit']?>','name':'<?php echo $data['nom']?>','price':'<?php echo $data['prix']?>','taille': productInfo.size,'img':'<?php echo $data['photo']?>'},1);
 
                     setTimeout(function() {
                         popupDiv.innerHTML = '';
                         popupDiv.style.display = 'none';
-                    }, 500);
+                    }, 1000);
                 } else {
                     alert("Veuillez choisir la taille du produit.");
                 }

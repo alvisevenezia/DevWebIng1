@@ -96,11 +96,13 @@ function panier() {
 
             `<div class="between_flex ligne_panier"><div class="center_align flex">
         <div id="blocimage">
-            <img src="${article.img}" alt="image" />
+        <img src="assets/img/${article.img}" alt="image" />
+            
                 </div>
             <div id="blocProduit">
 
          <p >${article.name}</p>
+         <p >${article.taille}</p>
          <p >${article.price} €</p>
 
             </div></div>

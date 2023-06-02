@@ -712,7 +712,7 @@ hr{
 
 .popup {
   position: fixed;
-  top: 10px; /* Ajustez ces valeurs selon votre besoin */
+  top: 20px; /* Ajustez ces valeurs selon votre besoin */
   right: 10px; /* Ajustez ces valeurs selon votre besoin */
   background-color: #fff;
   padding: 10px;
@@ -723,10 +723,9 @@ hr{
 }
 
 .popup img {
-  width: 50px; /* Ajustez cette valeur selon votre besoin */
-  height: 50px; /* Ajustez cette valeur selon votre besoin */
+  width: 100px; /* Ajustez cette valeur selon votre besoin */
+  height: 100px; /* Ajustez cette valeur selon votre besoin */
   margin-right: 10px;
-  vertical-align: middle;
 }
 
 .popup h3, .popup p {
