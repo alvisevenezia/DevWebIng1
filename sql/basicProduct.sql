@@ -43,8 +43,8 @@ VALUES
   ('TERCHANI', 'Loucas', 'loucasterchani@gmail.com', 'test2023', 'C');
 
 INSERT INTO colis (id, idLivreur, taille, poids, adresse, date_de_livraison, statut)
-VALUES ('12345AVGTF', 1, 'Petit', '1 kg', '22 avenue des lilas', '06-06-23', 'En-cours'),
-       ('45678KLOHP', 1, 'Moyen', '2 kg', '56 rue de la mort', curdate(), 'Arrive');
+VALUES ('12345AVGTF', 1, 'Petit', '1', '22 avenue des lilas', '06-06-23', 'En-cours'),
+       ('45678KLOHP', 1, 'Moyen', '2', '56 rue de la mort', curdate(), 'Arrive');
 
 -- create admin login
 

@@ -18,6 +18,7 @@
                 <li class="logo">\V</li>
             </div>
             <div class="flex navdiv">
+                <li> <a href="./livraison/index.php">COLIS<a></li>
                 <li class="border"><a href="panier.php">Panier</a></li>
                 <?php
 

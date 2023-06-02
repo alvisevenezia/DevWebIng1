@@ -1,10 +1,8 @@
 <?php require "./php/sessionutils.php"; 
-
     $mysqli = new mysqli("127.0.0.1", "root", "", "projetweb");
     $res = $mysqli->query("SELECT idVendeur FROM vendeur WHERE idLogin = '".$_SESSION["idLogin"]."'");
     $idVendeur = $res->fetch_assoc()["idVendeur"];
-    $result = $mysqli->query("SELECT SUM(quantite) FROM ventes GROUP BY idProduit");
-    print_r($result);
+    $result = $mysqli->query("SELECT * FROM ventes GROUP BY idProduit");
 ?>
 
 <!DOCTYPE html>
@@ -18,36 +16,35 @@
 </head>
 <body>
     <header> 
-        <<?php include_once('navbar.php');?>
+        <?php include_once('navbar.php');?>
     </header>
     <hr>
 
     <div class="compte">
         <h1 class="titre_compte">PROFIL</h1>
         <div class="information-perso">
-            <h2 style="padding:20px 0px;">NOM PRENOM</h2>
+            <h2 style="padding:20px 0px;"><?php echo $mysqli->query("SELECT nomSociete FROM vendeur WHERE idVendeur = ".$idVendeur."")->fetch_assoc()["nomSociete"];?></h2>
             <hr>
             <div class="produits">
-                <hr>
-                <h3 style="padding:20px 0px">MES PRODUITS</h3>
-                <div class="produits-container">
-                    <div class="produit">
-                        <img  class="produit-image" src="https://tinyurl.com/32htxj6p" alt="Produit 1">
-                        <h4>Nom du produit 1</h4>
-                        <p>Prix de vente : 10€</p>
-                    </div>
-                    <div class="produit">
-                        <img  class="produit-image"src="https://tinyurl.com/32htxj6p" alt="Produit 2">
-                        <h4>Nom du produit 2</h4>
-                        <p>Prix de vente : 15€</p>
-                    </div>
-                    <div class="produit">
-                        <img  class="produit-image" src="https://tinyurl.com/32htxj6p" alt="Produit 3">
-                        <h4>Nom du produit 3</h4>
-                        <p>Prix de vente : 20€</p>
-                    </div>
-                </div>
-                <h4 style="padding:20px 0px">Profit total: 45€</h4>
+            
+                <?php
+
+
+                    //get all the products sold by the seller
+                    $res = $mysqli->query("SELECT * FROM produit WHERE idVendeur = ".$idVendeur."");
+
+                    //loop through all the rows returned by the query and display them
+                    while($row = $res->fetch_assoc()){
+                        echo "<div class='produit'>";
+                        echo "<img src='./assets/img/".$row["photo"]."' alt='image' width='100px' height='100px'>";
+                        echo "<h4>".$row["nom"]."</h4>";
+                        echo "<p>Prix de vente : ".$row["prix"]."€</p>";
+                        echo "<p>Quantité en stock : ".$row["stock"]."</p>";
+                        echo "<hr>";
+                    }
+
+                ?>
+            
             </div>
            
             <button class="valider2" type="button" onclick="toggleHistorique()">HISTORIQUE DE MES VENTES</button>
@@ -71,60 +68,37 @@
                 }else{
 
                     //loop through all the rows returned by the query and display them
+                    
+                    $total = 0;
 
-                    $data = $result->fetch_array();
+                    echo "<div class='produit-container'>";
 
-                    print_r($data);
-                    print("<br>");
+                    while($row = $result->fetch_assoc()){
 
-                    foreach($data as $row){
-
-                        print_r($row);
-                        print("<br>");
-
-                        //echo "<div class='commande'>";
-                        //echo "<p>Commande n°".$row["idCommande"]."</p>";
-                        //echo "<p>Nom du produit : ".$row["nom"]."</p>";
-                        //echo "<p>Prix de vente : ".$row["prix"]."€</p>";
-                        //echo "<p>Solde : ".$row["solde"]."€</p>";
-                        //echo "</div>";
-                        //echo "<hr>";
+                        $data = $mysqli->query("SELECT * FROM produit WHERE idProduit = ".$row["idProduit"]."")->fetch_assoc();
+                        
+                        echo "<div class='produit'>";
+                        echo "<h4>".$data["nom"]."</h4>";
+                        echo "<p>Prix de vente : ".$data["prix"]."€</p>";
+                        echo "<p> Quantité vendue : ".$row["quantite"]."</p>";
+                        echo "<p> Solde : ".$data["prix"]*$row["quantite"]."€</p>";  
+                        $total += $data["prix"]*$row["quantite"];
+                        echo "</div>";
+                        echo "<hr>";
+                        
 
                     }
+
+                    //print total amount and ivide it by the comission 
+
+                    echo "<p> Montant total : ".$total."€</p>";
+                    echo "<p>Montant reçu apres commission : ".$total*(1-($mysqli->query("SELECT comission FROM vendeur WHERE idVendeur = ".$idVendeur."")->fetch_assoc()["comission"])/100)."€</p>";
+
+                    echo "</div>";
 
                 }
 
             ?>
-
-
-                <hr>
-                <h3 style="padding:20px 0px">HISTORIQUE DES PRODUITS VENDUS</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nom du produit</th>
-                            <th>Prix de vente</th>
-                            <th>Solde</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Produit 1</td>
-                            <td>10€</td>
-                            <td>+10€</td>
-                        </tr>
-                        <tr>
-                            <td>Produit 2</td>
-                            <td>15€</td>
-                            <td>+15€</td>
-                        </tr>
-                        <tr>
-                            <td>Produit 3</td>
-                            <td>20€</td>
-                            <td>+20€</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
           </div>
           
