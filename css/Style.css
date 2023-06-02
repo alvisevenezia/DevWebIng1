@@ -566,14 +566,14 @@ hr{
 
 
 .historique-produits {
-  max-height: 0;
-  overflow: hidden;
+  max-height:fit-content;
   transition: max-height 0.3s ease-in-out;
 }
 
 .historique-produits.visible {
   max-height: 500px; /* Ajustez la valeur en fonction du contenu de l'historique */
   transition: max-height 0.3s ease-in-out;
+  display: block;
 }
 
 

@@ -83,7 +83,10 @@ INSERT INTO livreur (nom, prenom, email, mot_de_passe, permis) VALUES
   ('Marie', 'Martin', 'marie.martin@example.com', 'motdepasse2', 'B'),
   ('Pierre', 'Lefebvre', 'pierre.lefebvre@example.com', 'motdepasse3', 'C');
 
-
+INSERT INTO ventes (id, idProduit, idClient, idVendeur, quantite, idCommande) VALUES
+	('1', '5', 'jean.dupont@example.com', '1', '1','EDFEYOZ6'),
+    ('2', '7', 'dupont.dupont@example.com', '3', '3','B1D6C9XE')
+    ;
 
 
 

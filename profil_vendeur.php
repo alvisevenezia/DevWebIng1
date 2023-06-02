@@ -41,23 +41,18 @@
                         echo "<p>Prix de vente : ".$row["prix"]."€</p>";
                         echo "<p>Quantité en stock : ".$row["stock"]."</p>";
                         echo "<hr>";
+                        echo "</div>";
                     }
 
                 ?>
             
             </div>
            
-            <button class="valider2" type="button" onclick="toggleHistorique()">HISTORIQUE DE MES VENTES</button>
+            <button class="valider2" type="button">HISTORIQUE DE MES VENTES</button>
             <div class="historique-produits">
 
         </div>
 
-        <script>
-            function toggleHistorique() {
-                var historique = document.querySelector('.historique-produits');
-                historique.classList.toggle('visible');
-            }
-        </script>
 
         <div class="historique-produits">
 
@@ -78,6 +73,7 @@
                         $data = $mysqli->query("SELECT * FROM produit WHERE idProduit = ".$row["idProduit"]."")->fetch_assoc();
                         
                         echo "<div class='produit'>";
+                        echo "<img src='./assets/img/".$data["photo"]."'.>";
                         echo "<h4>".$data["nom"]."</h4>";
                         echo "<p>Prix de vente : ".$data["prix"]."€</p>";
                         echo "<p> Quantité vendue : ".$row["quantite"]."</p>";
@@ -156,6 +152,7 @@
             </form>
             
         </div>
+            </br>
         
        
     </div>
